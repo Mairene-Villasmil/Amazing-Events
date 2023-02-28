@@ -1,0 +1,117 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+header{
+    width: 100%;
+    height: 12vh;
+    background-color: rgba(117, 151, 185, 0.562);
+}
+
+body{
+    background-color: rgb(214, 181, 186);
+    width: 100%;
+    height: 100%;
+}
+
+.collapse{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-brand img{
+width: 230px;
+width: 180px;
+}
+
+.nav-item{
+    width: 150px;
+    margin: 5px;
+}
+
+.nav-item a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    border: solid 2px black;
+    text-align: center;
+}
+
+main{
+    width: 100%;
+    height: 79%;
+}
+
+.home{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(rgba(117, 151, 185, 0.562), rgb(214, 181, 186));
+}
+
+.home p{
+    font-size: 40px;
+    text-align: center;
+}
+
+.home i{
+    font-size: 40px;
+    text-align: center;
+}
+
+.home a{
+    color: black;
+    text-decoration-line: none;
+}
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(rgb(214, 181, 186), rgba(117, 151, 185, 0.562));
+}
+
+.footer{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconos ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.iconos li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: 10px;
+    font-size: 30px;
+}
+
+.cohort p{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 18px;
+    font-weight: bolder;
+    margin: 0px 30px 0px 0px;
+}
+
+.copyright {
+    font-size: xx-small;
+    margin: 0px 30px 0px 0px;
+}
