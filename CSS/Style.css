@@ -7,11 +7,11 @@
 header{
     width: 100%;
     height: 12vh;
-    background-color: rgba(117, 151, 185, 0.562);
+    background-color: rgba(117, 151, 185, 0.614);
 }
 
 body{
-    background-color: rgb(214, 181, 186);
+    background-color:  rgb(214, 181, 186)
 
 }
 
@@ -33,17 +33,18 @@ body{
 
 .nav-item a{
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    text-align: center;
+    /* font-weight: bolder; */
+    color: rgb(255, 255, 255);
+    text-align: right;
 }
 
 .home{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    background: linear-gradient(rgba(117, 151, 185, 0.562), rgb(214, 181, 186));
+    background: linear-gradient(rgba(117, 151, 185, 0.614), rgb(214, 181, 186));
 }
 
 .home p{
@@ -64,7 +65,7 @@ body{
 footer{
     width: 100%;
     height: 10vh;
-    background: linear-gradient(rgb(214, 181, 186), rgba(117, 151, 185, 0.562));
+    background: linear-gradient(rgb(214, 181, 186), rgba(117, 151, 185, 0.614));
 }
 
 .footer{

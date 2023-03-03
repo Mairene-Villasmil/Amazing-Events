@@ -25,13 +25,14 @@ main{
 }
 
 .category li i{
-    border: solid 2px black;
+    border: solid 2px rgb(0, 0, 0);
     font-size: 12px;
+    margin: 3px;
 }
 
 .category li a{
     text-decoration-line: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 form{
@@ -43,6 +44,10 @@ form{
 
 form input[type="search"]{
     width: 400px;
+}
+
+button i{
+    color: rgb(0, 0, 0);
 }
 
 .container_card{
@@ -64,7 +69,7 @@ form input[type="search"]{
     width: 200px;
     height: 280px;
     border-radius: 8px;
-    background-color: rgba(117, 151, 185, 0.237);
+    background-color: rgba(112, 130, 150, 0.315);
 }
 
 .item img{
@@ -77,6 +82,12 @@ form input[type="search"]{
 
 .titulo_uno{
     font-weight: bolder;
+    text-align: center;
+    color: rgb(223, 72, 120);
+}
+
+.titulo_dos{
+    color: white;
 }
 
 .detalles{
@@ -91,7 +102,7 @@ form input[type="search"]{
 }
 
 .boton_d{
-    border: 2px solid rgb(243, 87, 136);
+    border: 2px solid rgb(223, 72, 120);
     padding: 3px 5px;
     border-radius: 8px;
     box-shadow: -2px -2px 6px 2px rgba(0,0,0,0.52);
@@ -99,5 +110,5 @@ form input[type="search"]{
 
 .boton_d a{
     text-decoration-line: none;
-    color: black;
+    color: rgb(0, 0, 0);
 }

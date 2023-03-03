@@ -41,7 +41,7 @@ main{
     width: 45%;
     display: flex;
     flex-direction: column;
-    border: 4px solid rgb(243, 87, 136);
+    border: 4px solid rgb(223, 72, 120);
     border-radius: 10px;
     background-color: rgba(117, 151, 185, 0.237);
     padding: 20px;
