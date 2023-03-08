@@ -11,6 +11,7 @@ main{
 }
 
 table{
+    height: 420px;
     border: 3px solid black;
 }
 
@@ -45,4 +46,44 @@ tr{
 
 .titulo{
     text-align: center;
+}
+
+
+@media screen and (max-width: 689px) {
+    main{
+        height: 78vh;
+    }
+
+    table{
+        width: 80%;
+        margin: 30px 0px;
+    }
+
+    .color th{
+        font-size: 13px;
+    }
+    td{
+        font-size: 9px;
+    }
+    th{
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 690px) and (max-width: 1024px) {
+    table{
+        width: 80%;
+        height: 600px;
+        margin: 50px 0px;
+    }
+
+    .color th{
+        font-size: 20px;
+    }
+    td{
+        font-size: 12px;
+    }
+    th{
+        font-size: 15px;
+    }
 }

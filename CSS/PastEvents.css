@@ -20,8 +20,9 @@ main{
 }
 
 .category li{
+    font-size: 14px;
     list-style-type: none;
-    margin:  0px 35px 0px 0px;
+    margin:  0px 20px 0px 0px;
     
 }
 
@@ -117,4 +118,80 @@ button i{
 .boton_d a{
     text-decoration-line: none;
     color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 689px) {
+    main{
+        height: 78%;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .category ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .category li i {
+        font-size: 8px;
+    }
+
+    .category li {
+        font-size: 10px;
+    }
+
+    form input[type="search"] {
+        width: 200px;
+        height: 25px;
+    }
+
+    button i {
+        color: rgb(0, 0, 0);
+    }
+
+    .container_card {
+        height: 100%;
+        grid-template-columns: 300px;
+        grid-template-rows: repeat(4, 300px);
+    }
+}
+
+@media screen and (min-width: 690px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .category ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .category li i {
+        font-size: 12px;
+    }
+
+    .category li {
+        font-size: 14px;
+    }
+
+    form input[type="search"] {
+        width: 250px;
+        height: 25px;
+    }
+
+    button i {
+        color: rgb(0, 0, 0);
+    }
+
+    .container_card {
+        height: 100%;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(2, 300px);
+    }
 }

@@ -1,32 +1,13 @@
-header{
+header {
     background: linear-gradient(rgba(117, 151, 185, 0.562), rgb(214, 181, 186));
 }
 
-main{
+main {
     width: 100%;
-    height: 78vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    height: 78%;
 }
 
-section{
-    display: flex;
-    width: 80%;
-    height: 350px;
-}
-
-section img{
-    width: 0px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: .8;
-    transition: .5s ease;
-}
-
-section img:hover {
-    cursor: crosshair;
-    width: 250px;
-    opacity: 1;
-    filter: contrast(120%);
+.item img{
+    width: 300px;
+    height: 200px;
 }
