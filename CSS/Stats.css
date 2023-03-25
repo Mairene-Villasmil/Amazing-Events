@@ -71,6 +71,9 @@ tr{
 }
 
 @media screen and (min-width: 690px) and (max-width: 1024px) {
+    main{
+        height: 78%;
+    }
     table{
         width: 80%;
         height: 600px;

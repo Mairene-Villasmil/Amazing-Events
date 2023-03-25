@@ -1,19 +1,20 @@
 main {
     width: 100%;
     height: 78%;
+    min-height: 78vh;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: stretch;
     margin: 15px 0px 0px 0px;
 }
 
 .category {
     height: fit-content;
-    margin-top: 15px;
+    margin: 0px 10px
 }
 
 .category ul {
@@ -70,6 +71,7 @@ main {
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
+    margin: 0px 10px;
 }
 
 form {
@@ -80,7 +82,7 @@ form {
 }
 
 form input[type="search"] {
-    width: 400px;
+    width: 300px;
 }
 
 button i {
@@ -89,30 +91,19 @@ button i {
 
 .container_card {
     width: 100%;
-    height: 300px;
     display: grid;
     grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 400px);
     gap: 20px;
     place-items: center;
     place-content: center;
-    margin: 30px 0px;
-}
-
-.container_card2 {
-    width: 100%;
-    height: 300px;
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    gap: 20px;
-    place-content: center;
-    place-items: center;
     margin: 30px 0px;
 }
 
 .item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 200px;
     height: 280px;
@@ -126,17 +117,18 @@ button i {
 }
 
 .item img {
-    width: 70%;
-    height: 100px;
+    width: 85%;
+    height: 130px;
     margin-bottom: 15px;
     border-radius: 5px;
     box-shadow: -4px -4px 10px 3px rgba(0, 0, 0, 0.52);
 }
 
-.titulo_uno {
+.titulo_dos {
+    font-size: 16px;
     font-weight: bolder;
     text-align: center;
-    color: rgb(223, 72, 120);
+    color: rgb(0, 0, 0);
 }
 
 .detalles {
@@ -189,6 +181,7 @@ button i {
     }
 
     .category li {
+        width: 130px;
         font-size: 10px;
     }
 
@@ -200,13 +193,7 @@ button i {
     .container_card {
         height: 100%;
         grid-template-columns: 300px;
-        grid-template-rows: repeat(4, 300px);
-    }
-
-    .container_card2 {
-        height: 100%;
-        grid-template-columns: 300px;
-        grid-template-rows: repeat(3, 300px);
+        grid-template-rows: repeat(7, 300px);
     }
 }
 
@@ -231,6 +218,7 @@ button i {
     }
 
     .category li {
+        width: 170px;
         font-size: 14px;
     }
 
@@ -242,19 +230,10 @@ button i {
     .container_card {
         width: 100%;
         height: fit-content;
-        grid-template-columns: repeat(2, 200px);
-        grid-template-rows: repeat(2, 300px);
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(3, 300px);
         column-gap: 80px;
         margin: 20px 0px;
     }
-
-    .container_card2 {
-        height: fit-content;
-        grid-template-columns: repeat(2, 200px);
-        grid-template-rows: 300px;
-        column-gap: 80px;
-        margin: 20px 0px;
-    }
-    
 
 }
