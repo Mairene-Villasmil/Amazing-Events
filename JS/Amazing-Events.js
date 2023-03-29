@@ -4,7 +4,7 @@ var datos = {
       {
         "id": 1,
         "image":"feria.jpg",
-        "name": "Fiesta de las colectividades",
+        "name": "Fiesta de las Colectividades",
         "date": "2021-12-12",
         "description": "Disfruta de tus platos favoritos, de los diferentes paises, en un evento unico para toda la familia",
         "category":"Feria de Comida",
@@ -16,9 +16,9 @@ var datos = {
       {
         "id": 2,
         "image":"museo.jpg",
-        "name": "Parque Juracico",
+        "name": "Parque Jurásico",
         "date": "2021-11-02",
-        "description": "Vamos al museo de paleontologia a hacer un recorrido increible para conocer los mas grandes dinosaurios",
+        "description": "¡¡Acompañanos en esta maravillosa experiencia!! Vamos al museo de paleontologia a hacer un recorrido increible para conocer los mas grandes dinosaurios de la historia.",
         "category":"Salida al museo",
         "place": "Campo",
         "capacity": 82000,
@@ -40,7 +40,7 @@ var datos = {
       {
         "id": 4,
         "image":"concierto.jpg",
-        "name": "Metallica in concert",
+        "name": "Metallica in Concert",
         "date": "2022-01-22",
         "description": "Unico recital de la banda mas emblematica ",
         "category": "Concierto de Música",
@@ -51,7 +51,10 @@ var datos = {
       },
       {
         "id": 5,
-        "image":"maraton.jpg",
+        "image": "maraton.jpg",
+        "imagedos":"maraton.jpg2",
+        "imagecinco":"maraton.jpg5",
+        "imageseis":"maraton.jpg6",
         "name": "10K por la vida",
         "date": "2021-03-01",
         "description": "Ven y haz ejercicio, mejora tu salud y tu estilo de vida",

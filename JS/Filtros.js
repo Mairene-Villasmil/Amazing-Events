@@ -17,7 +17,7 @@ for(var i = 0; i < eventos.length; i++){
 }
 
 
-var buttonNav= document.getElementsByClassName("barra-nav")
+var buttonNav= document.getElementsByClassName("nav-item")
 for(var i=0; i < buttonNav.length; i++ ){
     const element= buttonNav[i];
     element.addEventListener("click", function(e){
@@ -26,20 +26,27 @@ for(var i=0; i < buttonNav.length; i++ ){
 }
 
 function imprimir(id) {
-    console.log(id);
+
     switch (id) {
+
         case "upcoming" :
+            document.getElementById("tituloEncabezado").innerHTML="Eventos Futuros"
+            document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventosFuturos)        
             break;
         case "past" :
+            document.getElementById("tituloEncabezado").innerHTML="Eventos Pasados"
+            document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventosPasados) 
        break;
     
         default:
+            document.getElementById("tituloEncabezado").innerHTML="Inicio"
+            document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventos)
-        
+
     }
-        
+
     }
 
     function display(array) {
@@ -55,10 +62,27 @@ function imprimir(id) {
             </div>
           </div>
           `
-                
+
     }
+
     console.log(html)
     document.getElementById("tarjetas").innerHTML= html;
 }
 
-imprimir("home")
+console.log(location.search);
+
+var time = location.search.split("?time=")
+console.log(time[1]);
+
+switch (time[1]) {
+    case "past": imprimir ("past")
+        break;
+
+        case "upcoming": imprimir ("upcoming")
+        break;
+
+    default:
+        imprimir("home")
+}
+
+

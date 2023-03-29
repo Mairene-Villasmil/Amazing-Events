@@ -14,7 +14,7 @@ main {
 
 .category {
     height: fit-content;
-    margin: 0px 10px
+    margin: 0px 10px 0px 30px;
 }
 
 .category ul {
@@ -25,43 +25,12 @@ main {
 }
 
 .category li {
-    font-size: 14px;
+    font-size: 16px;
     list-style-type: none;
-    margin: 0px 20px 0px 0px;
-}
-
-.category li i {
-    border: solid 2px rgb(0, 0, 0);
-    font-size: 12px;
-    color: white;
-    margin: 3px;
+    margin: 0px 15px 0px 0px;
 }
 
 .category li a {
-    text-decoration-line: none;
-    color: rgb(255, 255, 255);
-}
-
-.category_dos ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-}
-
-.category_dos li {
-    list-style-type: none;
-    margin: 0px 20px 0px 0px;
-}
-
-.category_dos li i {
-    border: solid 2px rgb(0, 0, 0);
-    font-size: 12px;
-    color: white;
-    margin: 3px;
-}
-
-.category_dos li a {
     text-decoration-line: none;
     color: rgb(255, 255, 255);
 }
@@ -71,7 +40,7 @@ main {
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
-    margin: 0px 10px;
+    margin: 0px 30px 0px 0px;
 }
 
 form {
@@ -82,18 +51,26 @@ form {
 }
 
 form input[type="search"] {
-    width: 300px;
+    width: 200px;
+    height: 25px;
+    margin: 0px 5px;
+}
+
+button{
+    width: 25px;
+    height: 25px;
 }
 
 button i {
     color: rgb(0, 0, 0);
+    font-size: 16px;
 }
 
 .container_card {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 300px);
-    grid-template-rows: repeat(2, 400px);
+    grid-template-rows: repeat(fit-content, 400px);
     gap: 20px;
     place-items: center;
     place-content: center;
@@ -108,7 +85,7 @@ button i {
     width: 200px;
     height: 280px;
     border-radius: 5px;
-    background-color: rgba(112, 130, 150, 0.315);
+    background-color: rgb(133, 137, 156);
     color: white;
 }
 
@@ -154,6 +131,16 @@ button i {
     padding: 3px 5px;
     box-shadow: -2px -2px 6px 2px rgba(0, 0, 0, 0.52);
 }
+
+.boton_d:hover{
+        -webkit-animation: 0.5s click 1;
+    }
+    
+    @-webkit-keyframes click{
+        70%, 50%{
+            -webkit-transform:scale(1.1);
+        }
+    }
 
 .boton_d a {
     text-decoration-line: none;

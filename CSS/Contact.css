@@ -12,7 +12,6 @@ main {
 
 .formulario {
     width: 40%;
-    margin-top: 40px;
 }
 
 .formulario label {
@@ -40,8 +39,19 @@ main {
     border: 1px solid #000;
     border-radius: 5px;
     color: white;
-    background-color: rgb(223, 72, 120);
 }
+
+@keyframes animac{
+    from {background-color: rgba(202, 73, 94, 0.829)}
+    to {background-color: rgba(38, 74, 110, 0.836)}
+  }
+  
+  #content{
+    animation-name: animac;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
 
 textarea {
     width: 100%;
