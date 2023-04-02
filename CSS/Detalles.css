@@ -1,12 +1,8 @@
-header {
-    background: linear-gradient(rgba(117, 151, 185, 0.562), rgb(214, 181, 186));
-}
-
 main {
     width: 100%;
     height: 78vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -30,22 +26,21 @@ section{
 
 .principal{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .contenedor{
-    width: 50%;
+    width: 60%;
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid 20px rgba(88, 26, 50, 0.329);
-    border-radius: 5px;
+    border: solid 25px rgba(155, 43, 77, 0.637);
     box-shadow: -4px -4px 10px 3px rgba(38, 54, 70, 0.562);
-    margin-bottom: 50px;
+    background-color: rgba(179, 178, 178, 0.582);
 }
 
 .general{
@@ -53,40 +48,61 @@ section{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: 5px 0px;
+    padding: 0px 10px;
 }
 
 .titulo_tarjeta{
     width: 100%;
 }
+
 .titulo_uno{
-    font-size: 30px;
+    text-decoration-line: underline;
+    font-size: 40px;
     color: rgb(0, 0, 0);
     text-align: center;
     font-weight: bolder;
-    
+    margin-bottom: 15px;
 }
-.general{
-    margin: 25px 0px;
-}
+
 .fotos_detalles{
     width: 40%;
-    margin: 0px 20px;
+    margin: 0px 25px;
 }
+
 .fotos_detalles img{
-    width: 280px;
-    height: 180px;
+    width: 250px;
+    height: 150px;
     box-shadow: -4px -4px 10px 3px rgba(0, 0, 0, 0.52);
 }
 
 .detalle{
     font-size: 16px;
-    margin: 0px 25px;
+    margin: 15px 0px;
 }
+
+.detalles_abajo{ 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.detalles_uno{
+    width: 50%;
+}
+.detalles_dos{
+    width: 50%;
+}
+
 .precio{
     width: 100%;
-    height: 30px;
-    background-color: rgb(56, 55, 59);
-
+    height: 35px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
 }
 
 .precio p{
@@ -94,32 +110,53 @@ section{
     font-size: 25px;
     text-align: right;
     font-weight: bolder;
-}
-
-.carousel{
-    display: flex;
-    width: 80%;
-    height: 120px;
-}
-
-.carousel img{
-    width: 0px;
-    height: 150px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: .8;
-    transition: .5 ease;
-    border-radius: 5px;
-}
-
-.carousel img:hover{
-    width: 150px;
-    opacity: 1;
-    filter: contrast(120%);
+    margin-right: 10px;
 }
 
 @media screen and (max-width: 689px) {
+    .contenedor{
+        width: 80%;
+    }
+
+    .general{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .fotos_detalles img{
+        width: 80%;
+        height: 150px;
+    }
+
+    .fotos_detalles{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 20px 0px;
+    }
 }
 
 @media screen and (min-width: 690px) and (max-width: 1024px) {
+    .contenedor{
+        width: 80%;
+    }
+
+    .general{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .fotos_detalles img{
+        width: 50%;
+        height: 150px;
+    }
+
+    .fotos_detalles{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 20px 0px;
+    }
 }

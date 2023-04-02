@@ -14,7 +14,7 @@ main {
 
 .category {
     height: fit-content;
-    margin: 0px 10px 0px 30px;
+    margin: 0px 10px 0px 20px;
 }
 
 .category ul {
@@ -25,9 +25,9 @@ main {
 }
 
 .category li {
-    font-size: 16px;
+    font-size: 13px;
     list-style-type: none;
-    margin: 0px 15px 0px 0px;
+    margin: 0px 10px 0px 0px;
 }
 
 .category li a {
@@ -43,14 +43,14 @@ main {
     margin: 0px 30px 0px 0px;
 }
 
-form {
+.form {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items:stretch;
 }
 
-form input[type="search"] {
+.form input[type="search"] {
     width: 200px;
     height: 25px;
     margin: 0px 5px;
@@ -82,11 +82,12 @@ button i {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 200px;
-    height: 280px;
+    width: 240px;
+    height: 260px;
     border-radius: 5px;
-    background-color: rgb(133, 137, 156);
+    background-color: rgba(129, 123, 125, 0.329);
     color: white;
+    border: 1px solid black;
 }
 
 .precio {
@@ -102,7 +103,7 @@ button i {
 }
 
 .titulo_dos {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bolder;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -149,7 +150,7 @@ button i {
 
 @media screen and (max-width: 689px) {
     main{
-        height: 78%;
+        min-height: 78vh;
     }
 
     .container {
@@ -158,35 +159,60 @@ button i {
         align-items: flex-end;
     }
 
+    .category{
+        margin-bottom: 15px ;
+    }
+
     .category ul {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .category li i {
-        font-size: 8px;
-    }
-
     .category li {
         width: 130px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
-    form input[type="search"] {
-        width: 200px;
-        height: 25px;
+    .form input[type="search"] {
+        width: 160px;
+        height: 20px;
+    }
+
+    button{
+        width: 20px;
+        height: 20px;
+    }
+
+    button i {
+        font-size: 13px;
     }
 
     .container_card {
-        height: 100%;
-        grid-template-columns: 300px;
-        grid-template-rows: repeat(7, 300px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;            
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item {
+        width: 200px;
+        height: 260px;
+    }
+
+    .item img {
+        width: 80%;
+        height: 110px;
+    }
+
+    .titulo_dos {
+        font-size: 14px;
     }
 }
 
 @media screen and (min-width: 690px) and (max-width: 1024px) {
     main{
-        height: 78%;
+        height: fit-content;
     }
 
     .container {
@@ -200,17 +226,13 @@ button i {
         flex-wrap: wrap;
     }
 
-    .category li i {
-        font-size: 12px;
-    }
-
     .category li {
         width: 170px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
-    form input[type="search"] {
-        width: 250px;
+    .form input[type="search"] {
+        width: 200px;
         height: 25px;
     }
 

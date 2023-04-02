@@ -34,11 +34,12 @@ function imprimir(id) {
             document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventosFuturos)        
             break;
+
         case "past" :
             document.getElementById("tituloEncabezado").innerHTML="Eventos Pasados"
             document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventosPasados) 
-       break;
+            break;
     
         default:
             document.getElementById("tituloEncabezado").innerHTML="Inicio"
@@ -84,5 +85,3 @@ switch (time[1]) {
     default:
         imprimir("home")
 }
-
-
