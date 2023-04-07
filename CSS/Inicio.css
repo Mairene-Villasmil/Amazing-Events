@@ -9,7 +9,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    margin: 15px 0px 0px 0px;
+    margin: 15px 0px;
 }
 
 .category {
@@ -51,13 +51,14 @@ main {
 }
 
 .form input[type="search"] {
-    width: 200px;
+    width: 250px;
     height: 25px;
+    background-color: rgba(255, 255, 255, 0.541);
     margin: 0px 5px;
 }
 
 button{
-    width: 25px;
+    width: 28px;
     height: 25px;
 }
 
@@ -68,13 +69,11 @@ button i {
 
 .container_card {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 300px);
-    grid-template-rows: repeat(fit-content, 400px);
-    gap: 20px;
-    place-items: center;
-    place-content: center;
-    margin: 30px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .item {
@@ -82,12 +81,13 @@ button i {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 240px;
-    height: 260px;
-    border-radius: 5px;
-    background-color: rgba(129, 123, 125, 0.329);
-    color: white;
-    border: 1px solid black;
+    overflow: hidden;
+    width: 230px;
+    height: 300px;
+    border-radius: 3px;
+    background-color: rgba(202, 202, 202, 0.733);
+    border: 2px solid transparent;
+    margin: 20px 25px;
 }
 
 .precio {
@@ -95,25 +95,44 @@ button i {
 }
 
 .item img {
-    width: 85%;
-    height: 130px;
-    margin-bottom: 15px;
-    border-radius: 5px;
+    width: 100%;
+    height: 170px;
+    margin: 0px 0px 25px 0px;
     box-shadow: -4px -4px 10px 3px rgba(0, 0, 0, 0.52);
 }
 
+.card-imagen {
+    display: relative;
+    overflow: hidden;
+  }
+  
+  .zoomable {
+    transition: transform .6s;
+  
+    display: absolute;
+  }
+  
+  .zoomable:hover {
+    transform: scale(1.2);
+  }
+
 .titulo_dos {
+    width: 100%;
     font-size: 18px;
     font-weight: bolder;
     text-align: center;
     color: rgb(0, 0, 0);
+    text-decoration-line: underline;
+    margin: 10px 0px;
 }
 
 .detalles {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: 20px 0px 10px 0px;
 }
 
 .detalles p {
@@ -127,10 +146,11 @@ button i {
 
 .boton_d {
     width: fit-content;
-    border: 2px solid rgb(223, 72, 120);
-    border-radius: 8px;
-    padding: 3px 5px;
-    box-shadow: -2px -2px 6px 2px rgba(0, 0, 0, 0.52);
+    border: 1px solid rgb(180, 0, 105);
+    background-color: rgba(92, 90, 90, 0.575);
+    border-radius: 3px;
+    padding: 6px 7px;
+    box-shadow: -2px -2px 6px 2px rgba(58, 51, 51, 0.52);
 }
 
 .boton_d:hover{

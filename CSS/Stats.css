@@ -13,8 +13,6 @@ main{
 
 table{
     height: 420px;
-    border: solid 15px rgba(54, 50, 50, 0.89);
-    border-radius: 10px;
     background-color:rgba(146, 125, 133, 0.185); ;
 }
 

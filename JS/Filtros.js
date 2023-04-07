@@ -1,15 +1,16 @@
 const fechaBase = datos.fechaActual
-const eventos = datos.eventos 
+const eventos = datos.eventos
+let textoHTML = document.getElementById("form")
 
 console.log(fechaBase);
 console.log(eventos);
 
 const eventosPasados = []
-const eventosFuturos = [] 
+const eventosFuturos = []
 
-for(var i = 0; i < eventos.length; i++){
+for (var i = 0; i < eventos.length; i++) {
 
-    if(eventos[i].date > fechaBase){
+    if (eventos[i].date > fechaBase) {
         eventosFuturos.push(eventos[i])
     } else {
         eventosPasados.push(eventos[i])
@@ -17,11 +18,12 @@ for(var i = 0; i < eventos.length; i++){
 }
 
 
-var buttonNav= document.getElementsByClassName("nav-item")
-for(var i=0; i < buttonNav.length; i++ ){
-    const element= buttonNav[i];
-    element.addEventListener("click", function(e){
+var buttonNav = document.getElementsByClassName("nav-item")
+for (var i = 0; i < buttonNav.length; i++) {
+    const element = buttonNav[i];
+    element.addEventListener("click", function (e) {
         imprimir(e.target.id);
+
     })
 }
 
@@ -29,33 +31,54 @@ function imprimir(id) {
 
     switch (id) {
 
-        case "upcoming" :
-            document.getElementById("tituloEncabezado").innerHTML="Eventos Futuros"
+        case "upcoming":
+            document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros"
             document.getElementById("navegacion-titulo").classList.add('nav_home')
-            display(eventosFuturos)        
+            display(eventosFuturos)
             break;
 
-        case "past" :
-            document.getElementById("tituloEncabezado").innerHTML="Eventos Pasados"
+        case "past":
+            document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados"
             document.getElementById("navegacion-titulo").classList.add('nav_home')
-            display(eventosPasados) 
+            display(eventosPasados)
             break;
-    
+
+        case "contact":
+            document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros"
+            document.getElementById("navegacion-titulo").classList.add('nav_home')
+            container.innerHTML =`
+            <section class="formulario">
+                <form class="formu">
+                    <div class="formulario_dos"> 
+                        <label for="nombre"></label>   
+                        <input type="text" name="nombre" placeholder="Nombre">
+                        <label for="email"></label>
+                        <input type="email" name="email" placeholder="E-mail">
+                        <label for="text"></label>
+                        <textarea name="message" placeholder="Mensaje"></textarea>
+                        <button id="content" type="submit" >Enviar</button>
+                    </div>
+                </form>
+            </section>
+            `
+            tarjetas.innerHTML="";
+            break;
+
         default:
-            document.getElementById("tituloEncabezado").innerHTML="Inicio"
+            document.getElementById("tituloEncabezado").innerHTML = "Inicio"
             document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventos)
 
     }
 
-    }
+}
 
-    function display(array) {
-        var html = "";
-        for(var i=0; i < array.length; i++){
-            html+= 
+function display(array) {
+    var html = "";
+    for (var i = 0; i < array.length; i++) {
+        html +=
             `<div class="item">
-            <img src="./Imagenes/${array[i].image}" alt="${array[i].name}">
+            <img src="./Imagenes/${array[i].image}" class="card-img-top zoomable" alt="${array[i].name}">
             <p class="titulo_dos">${array[i].name}</p>
             <div class="detalles">
               <p class="precio">Precio: $${array[i].price}</p>
@@ -66,22 +89,32 @@ function imprimir(id) {
 
     }
 
-    console.log(html)
-    document.getElementById("tarjetas").innerHTML= html;
+
+    document.getElementById("tarjetas").innerHTML = html;
 }
 
-console.log(location.search);
+
 
 var time = location.search.split("?time=")
-console.log(time[1]);
+console.log(time);
+
 
 switch (time[1]) {
-    case "past": imprimir ("past")
+    case "past":
+        imprimir("past")
         break;
 
-        case "upcoming": imprimir ("upcoming")
+    case "upcoming":
+        imprimir("upcoming")
+        break;
+
+    case "contact":
+        imprimir("contact")
+        
         break;
 
     default:
         imprimir("home")
+
 }
+

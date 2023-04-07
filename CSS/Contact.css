@@ -12,7 +12,7 @@ main {
     align-items: center;
 }
 
-.form {
+.formu {
     width: 100%; 
     display: flex;
     flex-direction: row;
@@ -26,24 +26,24 @@ textarea {
     width: 100%;
     outline: none;
     display: block;
-    color: #000000;
+    color: black;
     padding: 7px;
     border: none;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid rgba(71, 71, 71, 0.747);
     margin-bottom: 10px;
     font-size: 18px;
-    height: 45px;
+    height: 35px;
     background-color: transparent;
 }
 
-fieldset {
-    width: 40%;
+.formulario_dos {
+    width: 35%;
     border: none;
     font-weight: normal;
-}
-
-textarea {
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 button[type="submit"] {
@@ -60,17 +60,17 @@ button[type="submit"] {
 
 @keyframes animac {
     from {
-        background-color: rgba(202, 73, 94, 0.829)
+        background-color: rgba(226, 98, 119, 0.829)
     }
 
     to {
-        background-color: rgba(38, 74, 110, 0.836)
+        background-color: rgba(34, 63, 92, 0.836)
     }
 }
 
 #content {
     animation-name: animac;
-    animation-duration: .9s;
+    animation-duration: .7s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
