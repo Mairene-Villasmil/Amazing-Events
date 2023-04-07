@@ -83,11 +83,11 @@ button i {
     align-items: center;
     overflow: hidden;
     width: 230px;
-    height: 300px;
+    height: 280px;
     border-radius: 3px;
     background-color: rgba(202, 202, 202, 0.733);
     border: 2px solid transparent;
-    margin: 20px 25px;
+    margin: 10px 25px;
 }
 
 .precio {

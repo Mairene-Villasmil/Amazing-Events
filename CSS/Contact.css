@@ -58,6 +58,10 @@ button[type="submit"] {
     outline: none;
 }
 
+::placeholder{
+    color: black;
+}
+
 @keyframes animac {
     from {
         background-color: rgba(226, 98, 119, 0.829)

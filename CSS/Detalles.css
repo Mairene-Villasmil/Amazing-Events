@@ -98,7 +98,7 @@ section{
 .precio{
     width: 100%;
     height: 35px;
-    background-color: rgba(190, 43, 92, 0.747);
+    background-color: rgba(190, 43, 92, 0.61);
     display: flex;
     flex-direction: row;
     justify-content: right;

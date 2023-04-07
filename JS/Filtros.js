@@ -1,6 +1,6 @@
 const fechaBase = datos.fechaActual
 const eventos = datos.eventos
-let textoHTML = document.getElementById("form")
+
 
 console.log(fechaBase);
 console.log(eventos);
@@ -23,7 +23,7 @@ for (var i = 0; i < buttonNav.length; i++) {
     const element = buttonNav[i];
     element.addEventListener("click", function (e) {
         imprimir(e.target.id);
-
+        
     })
 }
 
@@ -35,12 +35,14 @@ function imprimir(id) {
             document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros"
             document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventosFuturos)
+            container.innerHTML =""
             break;
 
         case "past":
             document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados"
             document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventosPasados)
+            container.innerHTML =""
             break;
 
         case "contact":
@@ -68,6 +70,7 @@ function imprimir(id) {
             document.getElementById("tituloEncabezado").innerHTML = "Inicio"
             document.getElementById("navegacion-titulo").classList.add('nav_home')
             display(eventos)
+            container.innerHTML =""
 
     }
 
@@ -82,7 +85,11 @@ function display(array) {
             <p class="titulo_dos">${array[i].name}</p>
             <div class="detalles">
               <p class="precio">Precio: $${array[i].price}</p>
-              <p class="boton_d"><a href="./Pages/Detalles.html?id=${array[i].id}">Detalles</a></p>
+            <p>
+                    <button class="btn bt-xs primario botones boton_d"  data-toggle="modal" data-target="#Visualizar">
+                    <a href="./Pages/Detalles.html?id=${array[i].id}">Detalles</a>
+                    </button>
+            </p>
             </div>
           </div>
           `
@@ -91,9 +98,10 @@ function display(array) {
 
 
     document.getElementById("tarjetas").innerHTML = html;
+
 }
 
-
+imprimir("home");
 
 var time = location.search.split("?time=")
 console.log(time);
