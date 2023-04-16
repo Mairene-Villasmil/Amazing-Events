@@ -1,7 +1,7 @@
 main {
     width: 100%;
-    height: 78%;
-    min-height: 78vh;
+    height: 77%;
+    min-height: 77vh;
 }
 
 .container {
@@ -51,20 +51,14 @@ main {
 }
 
 .form input[type="search"] {
-    width: 250px;
-    height: 25px;
+    width: 350px;
+    height: 30px;
     background-color: rgba(255, 255, 255, 0.541);
     margin: 0px 5px;
 }
 
-button{
-    width: 28px;
-    height: 25px;
-}
-
-button i {
-    color: rgb(0, 0, 0);
-    font-size: 16px;
+::placeholder{
+    color: rgb(92, 92, 92);
 }
 
 .container_card {
@@ -82,8 +76,8 @@ button i {
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
-    width: 230px;
-    height: 280px;
+    width: 210px;
+    height: 250px;
     border-radius: 3px;
     background-color: rgba(202, 202, 202, 0.733);
     border: 2px solid transparent;
@@ -96,7 +90,7 @@ button i {
 
 .item img {
     width: 100%;
-    height: 170px;
+    height: 180px;
     margin: 0px 0px 25px 0px;
     box-shadow: -4px -4px 10px 3px rgba(0, 0, 0, 0.52);
 }
@@ -118,7 +112,7 @@ button i {
 
 .titulo_dos {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bolder;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -161,9 +155,23 @@ button i {
     font-size: 15px;
 }
 
+.ceroResultado{
+    width: 700px;
+    height: 38vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sinEventos{
+    color: black;
+    font-size: 30px;
+}
+
 @media screen and (max-width: 689px) {
     main{
-        min-height: 78vh;
+        height: 77%;
+        min-height: fit-content;
     }
 
     .container {
@@ -187,17 +195,8 @@ button i {
     }
 
     .form input[type="search"] {
-        width: 160px;
-        height: 20px;
-    }
-
-    button{
-        width: 20px;
-        height: 20px;
-    }
-
-    button i {
-        font-size: 13px;
+        width: 280px;
+        height: 28px;
     }
 
     .container_card {
@@ -220,6 +219,14 @@ button i {
 
     .titulo_dos {
         font-size: 14px;
+    }
+
+    .ceroResultado{
+        width: 700px;
+        height: 44vh;
+    }
+    .sinEventos{
+        font-size: 15px;
     }
 }
 
@@ -245,8 +252,8 @@ button i {
     }
 
     .form input[type="search"] {
-        width: 200px;
-        height: 25px;
+        width: 500px;
+        height: 35px;
     }
 
     .container_card {

@@ -1,7 +1,7 @@
 main {
     width: 100%;
-    height: 78vh;
-    min-height: 78vh;
+    height: 77%;
+    min-height: 77vh;
 }
 
 .formulario{
@@ -13,7 +13,7 @@ main {
 }
 
 .formu {
-    width: 100%; 
+    width: 100vw; 
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -88,11 +88,16 @@ textarea {
 
 @media screen and (max-width: 689px) {
     main{
-        min-height: 78vh;
+        min-height: 77vh;
     }
 
     .form {
         width: 80%;
+    }
+
+    .formu {
+        width: 100vw;
+        height: 55vh;
     }
 
     .formulario input[type="submit"] {
@@ -117,6 +122,10 @@ textarea {
 }
 
 @media screen and (min-width: 690px) and (max-width: 1024px) {
+    main{
+        min-height: 77vh;
+    }
+
     .form {
         width: 60%;
     }

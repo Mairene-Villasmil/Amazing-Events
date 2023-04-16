@@ -11,7 +11,7 @@ for (var i = 0; i < eventos.length; i++) {
   }
 }
 console.log(eventoDetalles[0]);
-var detalleVista = //poner id en el container de detalles
+var detalleVista = 
 detalleVista = ` 
 <div class="contenedor">
     <div class="titulo_tarjeta">

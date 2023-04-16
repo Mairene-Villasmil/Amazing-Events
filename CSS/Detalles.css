@@ -1,6 +1,7 @@
 main {
     width: 100%;
-    height: 78vh;
+    height: 77%;
+    min-height: 77vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -114,13 +115,28 @@ section{
 }
 
 @media screen and (max-width: 689px) {
+    .fotos_detalles img{
+        width: 200px;
+        height: 100px;
+    }
+
     .contenedor{
-        width: 80%;
+        width: 70%;
+        height: fit-content;
+        border: solid 20px rgba(0, 0, 0, 0.781);
     }
 
     .general{
         flex-direction: column;
         justify-content: center;
+    }
+
+    .titulo_uno{
+        font-size: 20px;
+    }
+
+    .detalle {
+        font-size: 12px;
     }
 
     .fotos_detalles img{
@@ -135,6 +151,10 @@ section{
         width: 90%;
         margin: 20px 0px;
     }
+
+    .precio p{
+        font-size: 20px;
+     }
 }
 
 @media screen and (min-width: 690px) and (max-width: 1024px) {

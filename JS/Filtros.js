@@ -1,6 +1,6 @@
 const fechaBase = datos.fechaActual
 const eventos = datos.eventos
-
+const container = document.getElementById("container")
 
 console.log(fechaBase);
 console.log(eventos);
@@ -13,47 +13,92 @@ console.log(eventosFuturos);
 
 for (var i = 0; i < eventos.length; i++) {
 
-    if (eventos[i].date > fechaBase) {
-        eventosFuturos.push(eventos[i])
-    } else {
-        eventosPasados.push(eventos[i])
-    }
+  if (eventos[i].date > fechaBase) {
+    eventosFuturos.push(eventos[i])
+  } else {
+    eventosPasados.push(eventos[i])
+  }
 }
 
 
-// var buttonNavegar = []
+var botonNavegacion = [];
 var buttonNav = document.getElementsByClassName("nav-item")
 for (var i = 0; i < buttonNav.length; i++) {
-    const element = buttonNav[i];
-    // buttonNavegar.push(buttonNav[i].innerText)
-    element.addEventListener("click", function (e) {
-        imprimir(e.target.id);
+  const element = buttonNav[i];
+  botonNavegacion.push(buttonNav[i].innerText)
+  element.addEventListener("click", function (e) {
+    imprimir(e.target.id);
 
-    })
+  })
 }
 
-// console.log(buttonNavegar)
+console.log(botonNavegacion);
+
+let arrayFiltro = []
+let tarjetasEventos = document.getElementById("tarjetas")
 
 function imprimir(id) {
 
-    switch (id) {
+  switch (id) {
 
-        case "upcoming":
-            document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros";
-            document.getElementById("navegacion-titulo").classList.add('nav_home');
-            display(eventosFuturos);
-            break;
+    case "upcoming":
+      document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros";
+      document.getElementById("navegacion-titulo").classList.add('nav_home');
+      var searchContainer = document.getElementById("search")
+      searchContainer.innerHTML =
+        `<div class="category">
+            <ul>
+              <li><input type="checkbox">Vamos al Cine</li>
+              <li><input type="checkbox">Feria de Comida</li>
+              <li><input type="checkbox">Concierto de Musica</li>
+              <li><input type="checkbox">Intercambio de Libros</li>
+              <li><input type="checkbox">Salida al Museo</li>
+              <li><input type="checkbox">Noche de Halloween</li>
+              <li><input type="checkbox">Carrera</li>
+              <li><input type="checkbox">Fútbol</li>
+            </ul>
+          </div>
+          <div class="busqueda">
+            <div class="form">
+              <input type="search" placeholder="Busca tu evento">
+            </div>
+          </div> `
+      arrayFiltro = eventosFuturos
+      display(eventosFuturos);
+      break;
 
-        case "past":
-            document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
-            document.getElementById("navegacion-titulo").classList.add('nav_home');
-            display(eventosPasados);
-            break;
+    case "past":
+      document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
+      document.getElementById("navegacion-titulo").classList.add('nav_home');
+      var searchContainer = document.getElementById("search")
+      searchContainer.innerHTML =
+        `<div class="category">
+            <ul>
+              <li><input type="checkbox">Vamos al Cine</li>
+              <li><input type="checkbox">Feria de Comida</li>
+              <li><input type="checkbox">Concierto de Musica</li>
+              <li><input type="checkbox">Intercambio de Libros</li>
+              <li><input type="checkbox">Salida al Museo</li>
+              <li><input type="checkbox">Noche de Halloween</li>
+              <li><input type="checkbox">Carrera</li>
+              <li><input type="checkbox">Fútbol</li>
+            </ul>
+          </div>
+          <div class="busqueda">
+            <div class="form">
+              <input type="search" placeholder="Busca tu evento">
+            </div>
+          </div> `
+      arrayFiltro = eventosPasados
+      display(eventosPasados);
+      break;
 
-        case "contact":
-            document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros";
-            document.getElementById("navegacion-titulo").classList.add('nav_home');
-            tarjetas.innerHTML = `
+    case "contact":
+      document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros";
+      document.getElementById("navegacion-titulo").classList.add('nav_home');
+      var searchContainer = document.getElementById("search")
+      searchContainer.innerHTML = ""
+      tarjetasEventos.innerHTML = `
             <section class="formulario">
                 <form class="formu">
                     <div class="formulario_dos"> 
@@ -68,12 +113,14 @@ function imprimir(id) {
                 </form>
             </section>
             `
-            break;
+      break;
 
-        case "stats":
-            document.getElementById("tituloEncabezado").innerHTML = "Estadísticas";
-            document.getElementById("navegacion-titulo").classList.add('nav_home');
-            tarjetas.innerHTML = `
+    case "stats":
+      document.getElementById("tituloEncabezado").innerHTML = "Estadísticas";
+      document.getElementById("navegacion-titulo").classList.add('nav_home');
+      var searchContainer = document.getElementById("search")
+      searchContainer.innerHTML = ""
+      tarjetasEventos.innerHTML = `
             <table>
             <tr class="color">
               <th colspan="3">Estadísticas de Eventos</th>
@@ -146,22 +193,42 @@ function imprimir(id) {
             </tr>
           </table>
             `
-            break;
+      break;
 
-        default:
-            document.getElementById("tituloEncabezado").innerHTML = "Inicio";
-            document.getElementById("navegacion-titulo").classList.add('nav_home');
-            display(eventos);
+    default:
+      document.getElementById("tituloEncabezado").innerHTML = "Inicio";
+      document.getElementById("navegacion-titulo").classList.add('nav_home');
+      var searchContainer = document.getElementById("search")
+      searchContainer.innerHTML =
+        `<div class="category">
+            <ul>
+              <li><input type="checkbox">Vamos al Cine</li>
+              <li><input type="checkbox">Feria de Comida</li>
+              <li><input type="checkbox">Concierto de Musica</li>
+              <li><input type="checkbox">Intercambio de Libros</li>
+              <li><input type="checkbox">Salida al Museo</li>
+              <li><input type="checkbox">Noche de Halloween</li>
+              <li><input type="checkbox">Carrera</li>
+              <li><input type="checkbox">Fútbol</li>
+            </ul>
+          </div>
+          <div class="busqueda">
+            <div class="form">
+              <input type="search" placeholder="Busca tu evento">
+            </div>
+          </div> `
+      arrayFiltro = eventos
+      display(eventos);
 
-    }
+  }
 
 }
 
 function display(array) {
-    var html = "";
-    for (var i = 0; i < array.length; i++) {
-        html +=
-            `<div class="item">
+  var html = "";
+  for (var i = 0; i < array.length; i++) {
+    html +=
+      `<div class="item">
             <img src="./Imagenes/${array[i].image}" class="card-img-top zoomable" alt="${array[i].name}">
             <p class="titulo_dos">${array[i].name}</p>
             <div class="detalles">
@@ -175,10 +242,10 @@ function display(array) {
           </div>
           `
 
-    }
+  }
 
-
-    document.getElementById("tarjetas").innerHTML = html;
+  tarjetasEventos.innerHTML = html
+  // document.getElementById("tarjetas").innerHTML = html;
 
 }
 
@@ -189,56 +256,112 @@ console.log(time);
 
 
 switch (time[1]) {
-    case "past":
-        imprimir("past")
-        break;
+  case "past":
+    imprimir("past")
+    break;
 
-    case "upcoming":
-        imprimir("upcoming")
-        break;
+  case "upcoming":
+    imprimir("upcoming")
+    break;
 
-    case "contact":
-        imprimir("contact")
-        break;
+  case "contact":
+    imprimir("contact")
+    break;
 
-    case "stats":
-        imprimir("stats")
-        break;
+  case "stats":
+    imprimir("stats")
+    break;
 
-    default:
-        imprimir("home")
+  default:
+    imprimir("home")
 
 }
 
-
-const arrowD = document.getElementById("flechaDerecha");
-arrowD.addEventListener("click", function (e) {
-    flechas(e.target.pag)
+var buttonD = document.getElementById("flechaDerecha")
+buttonD.addEventListener("click", function (e) {
+  var pagina = document.getElementById("tituloEncabezado").innerText
+  if (botonNavegacion.indexOf(pagina) < 4) {
+    nextPage(botonNavegacion.indexOf(pagina) + 1);
+  } else {
+    nextPage(0)
+  }
 })
-const arrowI = document.getElementById("flechaIzquierda");
-arrowI.addEventListener("click", function (e) {
-    flechas(e.target.pag)
-    console.log(e);
+
+function nextPage(i) {
+  switch (i) {
+    case 1:
+      imprimir("upcoming")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 2:
+      imprimir("past")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 3:
+      imprimir("contact")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 4:
+      imprimir("stats")
+
+      break;
+    default:
+      imprimir("home")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+  }
+}
+
+
+var buttonI = document.getElementById("flechaIzquierda")
+buttonI.addEventListener("click", function (e) {
+  var paginaI = document.getElementById("tituloEncabezado").innerText
+  if (botonNavegacion.indexOf(paginaI) <= 4) {
+    antPage(botonNavegacion.indexOf(paginaI) - 1);
+  } else {
+    antPage(0)
+  }
 })
 
-function flechas(pag) {
-    if (time[1] == "upcoming") {
-        arrowD.href = "/index.html?time=past"
-        arrowI.href = "/index.html"
-    } else
-        if (time[1] == "past") {
-            arrowD.href = "/index.html?time=contact"
-            arrowI.href = "/index.html?time=upcoming"
-        } else
-            if (time[1] == "contact") {
-                arrowD.href = "/index.html?time=stats"
-                arrowI.href = "/index.html?time=past"
-            } else
-                if (time[1] == "stats") {
-                    arrowD.href = "/index.html"
-                    arrowI.href = "/index.html?time=contact"
-                } else {
-                    arrowD.href = "/index.html?time=upcoming"
-                    arrowI.href = "/index.html?time=stats"
-                }
+function antPage(i) {
+  switch (i) {
+    case 1:
+      imprimir("upcoming")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 2:
+      imprimir("past")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 3:
+      imprimir("contact")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 4:
+      imprimir("stats")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    default:
+      imprimir("stats")
+  }
+}
+
+var Search = document.getElementById("search")
+
+Search.addEventListener("keyup", function (evento) { capturaEvento(evento) })
+
+function capturaEvento(evento) {
+  var datoInput = evento.target.value
+  var datoSinEspacio = datoInput.trim().toLowerCase()
+
+  var filtrado = arrayFiltro.filter(evento => evento.name.toLowerCase().includes(datoSinEspacio))
+  if(filtrado.length === 0){
+    tarjetasEventos.innerHTML = `
+    <div class="ceroResultado">
+      <h1 class="sinEventos">No se encontraron eventos para tu busqueda...</h1>
+    </div>
+    `
+  }else{
+    display(filtrado);
+  }
+
 }
