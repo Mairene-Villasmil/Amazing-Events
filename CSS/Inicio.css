@@ -15,24 +15,19 @@ main {
 .category {
     height: fit-content;
     margin: 0px 10px 0px 20px;
+    flex-wrap: wrap;
 }
 
-.category ul {
+.category {
     display: flex;
     flex-direction: row;
     justify-content: left;
     align-items: center;
 }
 
-.category li {
-    font-size: 13px;
-    list-style-type: none;
-    margin: 0px 10px 0px 0px;
-}
-
-.category li a {
-    text-decoration-line: none;
-    color: rgb(255, 255, 255);
+.category label {
+    font-size: 15px;
+    margin: 0px 10px 10px 0px;
 }
 
 .busqueda{
@@ -53,12 +48,16 @@ main {
 .form input[type="search"] {
     width: 350px;
     height: 30px;
-    background-color: rgba(255, 255, 255, 0.541);
+    background-color: rgba(26, 31, 56, 0.541);
     margin: 0px 5px;
 }
 
 ::placeholder{
-    color: rgb(92, 92, 92);
+    color: rgb(255, 255, 255);
+}
+
+#search{
+    width: 100%;
 }
 
 .container_card {
@@ -68,6 +67,7 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 35px;
 }
 
 .item {
@@ -78,7 +78,7 @@ main {
     overflow: hidden;
     width: 210px;
     height: 250px;
-    border-radius: 3px;
+    border-radius: 15px 0px;
     background-color: rgba(202, 202, 202, 0.733);
     border: 2px solid transparent;
     margin: 10px 25px;
@@ -165,7 +165,7 @@ main {
 
 .sinEventos{
     color: black;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 689px) {

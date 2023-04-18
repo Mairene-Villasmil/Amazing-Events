@@ -13,13 +13,13 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 35px 0px;
 }
 
 table{
     width: 90%;
     height: 420px;
-    background-color:rgba(146, 125, 133, 0.185); ;
+    background-color:rgba(146, 125, 133, 0.185);
+    margin-bottom: 35px;
 }
 
 .color{

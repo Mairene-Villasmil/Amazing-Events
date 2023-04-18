@@ -47,16 +47,13 @@ function imprimir(id) {
       var searchContainer = document.getElementById("search")
       searchContainer.innerHTML =
         `<div class="category">
-            <ul>
-              <li><input type="checkbox">Vamos al Cine</li>
-              <li><input type="checkbox">Feria de Comida</li>
-              <li><input type="checkbox">Concierto de Musica</li>
-              <li><input type="checkbox">Intercambio de Libros</li>
-              <li><input type="checkbox">Salida al Museo</li>
-              <li><input type="checkbox">Noche de Halloween</li>
-              <li><input type="checkbox">Carrera</li>
-              <li><input type="checkbox">Fútbol</li>
-            </ul>
+            <label><input type="checkbox">Vamos al Cine</label>
+            <label><input type="checkbox"> Feria de Comida</label>
+            <label><input type="checkbox">Concierto de Musica</label>
+            <label><input type="checkbox">Intercambio de Libros</label>
+            <label><input type="checkbox">Salida al Museo</label>
+            <label><input type="checkbox">Noche de Halloween</label>
+            <label><input type="checkbox">Carrera</label>
           </div>
           <div class="busqueda">
             <div class="form">
@@ -72,17 +69,14 @@ function imprimir(id) {
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       var searchContainer = document.getElementById("search")
       searchContainer.innerHTML =
-        `<div class="category">
-            <ul>
-              <li><input type="checkbox">Vamos al Cine</li>
-              <li><input type="checkbox">Feria de Comida</li>
-              <li><input type="checkbox">Concierto de Musica</li>
-              <li><input type="checkbox">Intercambio de Libros</li>
-              <li><input type="checkbox">Salida al Museo</li>
-              <li><input type="checkbox">Noche de Halloween</li>
-              <li><input type="checkbox">Carrera</li>
-              <li><input type="checkbox">Fútbol</li>
-            </ul>
+        `<div class="category" id="categories">
+              <label><input type="checkbox">Vamos al Cine</label>
+              <label><input type="checkbox"> Feria de Comida</label>
+              <label><input type="checkbox">Concierto de Musica</label>
+              <label><input type="checkbox">Intercambio de Libros</label>
+              <label><input type="checkbox">Salida al Museo</label>
+              <label><input type="checkbox">Noche de Halloween</label>
+              <label><input type="checkbox">Carrera</label>
           </div>
           <div class="busqueda">
             <div class="form">
@@ -201,16 +195,13 @@ function imprimir(id) {
       var searchContainer = document.getElementById("search")
       searchContainer.innerHTML =
         `<div class="category">
-            <ul>
-              <li><input type="checkbox">Vamos al Cine</li>
-              <li><input type="checkbox">Feria de Comida</li>
-              <li><input type="checkbox">Concierto de Musica</li>
-              <li><input type="checkbox">Intercambio de Libros</li>
-              <li><input type="checkbox">Salida al Museo</li>
-              <li><input type="checkbox">Noche de Halloween</li>
-              <li><input type="checkbox">Carrera</li>
-              <li><input type="checkbox">Fútbol</li>
-            </ul>
+            <label><input type="checkbox">Vamos al Cine</label>
+            <label><input type="checkbox"> Feria de Comida</label>
+            <label><input type="checkbox">Concierto de Musica</label>
+            <label><input type="checkbox">Intercambio de Libros</label>
+            <label><input type="checkbox">Salida al Museo</label>
+            <label><input type="checkbox">Noche de Halloween</label>
+            <label><input type="checkbox">Carrera</label>
           </div>
           <div class="busqueda">
             <div class="form">
