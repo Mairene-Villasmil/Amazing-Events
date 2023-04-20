@@ -9,9 +9,9 @@ const eventosPasados = []
 const eventosFuturos = []
 
 console.log(eventosFuturos);
-console.log(eventosFuturos);
+console.log(eventosPasados);
 
-for (var i = 0; i < eventos.length; i++) {
+for (var i = 0; i <eventos.length; i++) {
 
   if (eventos[i].date > fechaBase) {
     eventosFuturos.push(eventos[i])
@@ -22,8 +22,10 @@ for (var i = 0; i < eventos.length; i++) {
 
 
 var botonNavegacion = [];
+
+
 var buttonNav = document.getElementsByClassName("nav-item")
-for (var i = 0; i < buttonNav.length; i++) {
+for (var i = 0; i <buttonNav.length; i++) {
   const element = buttonNav[i];
   botonNavegacion.push(buttonNav[i].innerText)
   element.addEventListener("click", function (e) {
@@ -215,6 +217,7 @@ function imprimir(id) {
 
 }
 
+
 function display(array) {
   var html = "";
   for (var i = 0; i < array.length; i++) {
@@ -243,8 +246,6 @@ function display(array) {
 
 
 var time = location.search.split("?time=")
-console.log(time);
-
 
 switch (time[1]) {
   case "past":
@@ -267,6 +268,7 @@ switch (time[1]) {
     imprimir("home")
 
 }
+
 
 var buttonD = document.getElementById("flechaDerecha")
 buttonD.addEventListener("click", function (e) {
@@ -335,6 +337,7 @@ function antPage(i) {
       imprimir("stats")
   }
 }
+
 
 var Search = document.getElementById("search")
 

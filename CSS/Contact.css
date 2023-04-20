@@ -37,6 +37,10 @@ textarea {
     background-color: transparent;
 }
 
+::placeholder{
+    color: black;
+}
+
 .formulario_dos {
     width: 35%;
     border: none;

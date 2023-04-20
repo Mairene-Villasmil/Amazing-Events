@@ -3,13 +3,14 @@ main {
     height: 77%;
     min-height: 77vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
-#navegacion-titulo{
-   display: none;
+.home{
+    height: 120px;
+    margin-bottom: 70px;
 }
 
 #tarjetas{
@@ -40,7 +41,7 @@ section{
     justify-content: center;
     align-items: center;
     border-radius: 20px 0px;
-    box-shadow: -8px -8px 15px 6px rgba(0, 0, 0, 0.562);
+    box-shadow: -6px -6px 10px 6px rgba(0, 0, 0, 0.562);
     background-color: rgba(212, 210, 208, 0.582);
 }
 
@@ -124,6 +125,8 @@ section{
     .contenedor{
         width: 70%;
         height: fit-content;
+        padding-top: 10px;
+        margin-bottom: 30px;
     }
 
     .general{
@@ -132,7 +135,7 @@ section{
     }
 
     .titulo_uno{
-        font-size: 20px;
+        font-size: 28px;
     }
 
     .detalle {
@@ -158,8 +161,15 @@ section{
 }
 
 @media screen and (min-width: 690px) and (max-width: 1024px) {
+    .home p {
+        font-size: 30px;
+    }
+
     .contenedor{
-        width: 80%;
+        width: 60%;
+        height: max-content;
+        padding-top: 10px;
+        margin-bottom: 30px;
     }
 
     .general{

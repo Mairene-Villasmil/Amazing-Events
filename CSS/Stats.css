@@ -18,7 +18,7 @@ main{
 table{
     width: 90%;
     height: 420px;
-    background-color:rgba(146, 125, 133, 0.185);
+    background-color:rgba(126, 100, 100, 0.137);
     margin-bottom: 35px;
 }
 
@@ -38,6 +38,7 @@ td{
     text-align: center;
     font-weight: bold;
     border: 3px solid black;
+    border-radius: 5px;
 }
 
 th{
@@ -45,6 +46,7 @@ th{
     text-align: center;
     padding: 0px 10px;
     border: 3px solid black;
+    border-radius: 5px;
 }
 
 .titulo{
@@ -55,6 +57,7 @@ th{
     font-weight: bolder;
     color: black;
     background-color: rgb(155, 152, 152);
+    border-radius: 5px;
 }
 
 

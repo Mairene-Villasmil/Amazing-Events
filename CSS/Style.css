@@ -232,8 +232,8 @@ footer {
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    margin: 10px;
-    font-size: 30px;
+    margin: 10px 20px;
+    font-size: 35px;
 }
 
 .iconos li a{
@@ -331,7 +331,7 @@ footer {
     }
 
     .home p {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .home a i {
