@@ -326,15 +326,15 @@ footer {
 	}
 
     .home {
-        width: 100vw;
         height: 150px;
     }
 
-    .home p {
-        font-size: 20px;
+    .home p,
+    .navegacion_tituloDos a {
+        font-size: 30px;
     }
 
-    .home a i {
+    .home a i{
         font-size: 25px;
     }
 
