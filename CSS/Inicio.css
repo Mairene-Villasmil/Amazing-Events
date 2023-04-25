@@ -37,6 +37,10 @@ input[type="checkbox"]{
     align-items: flex-end;
 }
 
+#busquedaDOS{
+    width: 100%;
+}
+
 input[type="search"] {
     width: 400px;
     height: 30px;
@@ -49,10 +53,14 @@ input[type="search"] {
     color: rgb(255, 255, 255);
 }
 
-#search{
+.search{
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+#search{
+    display: none;
 }
 
 .container_card {
@@ -187,8 +195,13 @@ input[type="search"] {
         font-size: 12px;
     }
 
+    .busqueda{
+        justify-content: center;
+        align-items: center;
+    }
+
     input[type="search"] {
-        width: 280px;
+        width: 250px;
         height: 28px;
     }
 
@@ -246,7 +259,7 @@ input[type="search"] {
     }
 
     input[type="search"] {
-        width: 500px;
+        width: 350px;
         height: 35px;
     }
 

@@ -40,7 +40,6 @@ function imprimir(id) {
     case "upcoming":
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
-      //inputSearch.value = ""
       arrayFiltro = eventosFuturos
       display(eventosFuturos)
       eventsCategories(eventosFuturos)
@@ -50,7 +49,6 @@ function imprimir(id) {
     case "past":
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
-      //inputSearch.value = ""
       arrayFiltro = eventosPasados
       display(eventosPasados)
       eventsCategories(eventosPasados)
@@ -60,21 +58,20 @@ function imprimir(id) {
     case "contact":
       document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
-      imprimirForm()
       searchContainer.style.display = "none"
+      imprimirForm()
       break;
 
     case "stats":
       document.getElementById("tituloEncabezado").innerHTML = "Estadísticas";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
-      imprimirStats()
       searchContainer.style.display = "none"
+      imprimirStats()
       break;
 
     default:
       document.getElementById("tituloEncabezado").innerHTML = "Inicio";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
-      // inputSearch.value = ""
       arrayFiltro = eventos
       display(eventos)
       eventsCategories(eventos)
@@ -118,9 +115,9 @@ function imprimirForm(){
   <form class="formu">
       <div class="formulario_dos"> 
           <label for="nombre"></label>   
-          <input type="text" name="nombre" placeholder="Nombre">
+          <input type="text" name="nombre" placeholder="Nombre" required>
           <label for="email"></label>
-          <input type="email" name="email" placeholder="E-mail">
+          <input type="email" name="email" placeholder="E-mail" required>
           <label for="text"></label>
           <textarea name="message" placeholder="Mensaje"></textarea>
           <button id="content" type="submit" >Enviar</button>
@@ -230,76 +227,75 @@ switch (time[1]) {
 }
 
 
-// var buttonD = document.getElementById("flechaDerecha")
-// buttonD.addEventListener("click", function (e) {
-//   var pagina = document.getElementById("tituloEncabezado").innerText
-//   console.log(pagina);
-//   if (botonNavegacion.indexOf(pagina) < 4) {
-//     nextPage(botonNavegacion.indexOf(pagina) + 1);
-//   } else {
-//     nextPage(0)
-//   }
-// })
+var buttonD = document.getElementById("flechaDerecha")
+buttonD.addEventListener("click", function (e) {
+  var pagina = document.getElementById("tituloEncabezado").innerText
+  if (botonNavegacion.indexOf(pagina) < 4) {
+    nextPage(botonNavegacion.indexOf(pagina) + 1);
+  } else {
+    nextPage(0)
+  }
+})
 
-// function nextPage(i) {
-//   switch (i) {
-//     case 0:
-//       display(eventos)
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     case 1:
-//       display(eventosFuturos)
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     case 2:
-//       display(eventosPasados)
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     case 3:
-//       imprimirForm()
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     default:
-//       imprimirStats()
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//   }
-// }
+function nextPage(i) {
+  switch (i) {
+    case 0:
+      imprimir("home")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 1:
+      imprimir("upcoming")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 2:
+      imprimir("past")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 3:
+      imprimir("contact")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    default:
+      imprimir("stats")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+  }
+}
 
 
-// var buttonI = document.getElementById("flechaIzquierda")
-// buttonI.addEventListener("click", function (e) {
-//   var paginaI = document.getElementById("tituloEncabezado").innerText
-//   console.log(paginaI);
-//   if (botonNavegacion.indexOf(paginaI) <= 4) {
-//     antPage(botonNavegacion.indexOf(paginaI) - 1);
-//   } else {
-//     antPage(0)
-//   }
-// })
+var buttonI = document.getElementById("flechaIzquierda")
+buttonI.addEventListener("click", function (e) {
+  var paginaI = document.getElementById("tituloEncabezado").innerText
+  console.log(paginaI);
+  if (botonNavegacion.indexOf(paginaI) <= 4) {
+    antPage(botonNavegacion.indexOf(paginaI) - 1);
+  } else {
+    antPage(0)
+  }
+})
 
-// function antPage(i) {
-//   switch (i) {
-//     case 0:
-//       display(eventos)
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     case 1:
-//       display(eventosFuturos)
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     case 2:
-//       display(eventosPasados)
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     case 3:
-//       imprimirForm()
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//       break;
-//     default:
-//       imprimirStats()
-//       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
-//   }
-// }
+function antPage(i) {
+  switch (i) {
+    case 0:
+      imprimir("home")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 1:
+      imprimir("upcoming")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 2:
+      imprimir(past)
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    case 3:
+      imprimir("contact")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+      break;
+    default:
+      imprimir("stats")
+      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
+  }
+}
 
 
 var inputSearch = document.getElementById("Search")
