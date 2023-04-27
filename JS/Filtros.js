@@ -257,16 +257,17 @@ function nextPage(i) {
       break;
     default:
       imprimir("stats")
-      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
   }
 }
 
 
 var buttonI = document.getElementById("flechaIzquierda")
+console.log(buttonI);
 buttonI.addEventListener("click", function (e) {
   var paginaI = document.getElementById("tituloEncabezado").innerText
   console.log(paginaI);
   if (botonNavegacion.indexOf(paginaI) <= 4) {
+    console.log(botonNavegacion);
     antPage(botonNavegacion.indexOf(paginaI) - 1);
   } else {
     antPage(0)
@@ -284,7 +285,7 @@ function antPage(i) {
       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
       break;
     case 2:
-      imprimir(past)
+      imprimir("past")
       document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
       break;
     case 3:
@@ -293,9 +294,9 @@ function antPage(i) {
       break;
     default:
       imprimir("stats")
-      document.getElementById("tituloEncabezado").innerHTML = botonNavegacion[i]
   }
 }
+console.log(antPage);
 
 
 var inputSearch = document.getElementById("Search")
@@ -371,5 +372,4 @@ var checkboxs = document.querySelectorAll('input[type=checkbox]')
     <h1 class="sinEventos" >No se encontraron eventos para tu busqueda...</h1>
     </div>
     `
-console.log(filtrado);
 }
