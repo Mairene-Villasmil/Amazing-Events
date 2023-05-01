@@ -1,7 +1,7 @@
 main {
     width: 100%;
-    height: 77%;
-    min-height: 77vh;
+    height: 75%;
+    min-height: 75vh;
 }
 
 .container {
@@ -12,8 +12,9 @@ main {
     margin: 15px 10px;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     margin-left: 15px;
+    background-color: transparent;
 }
 
 .category {
@@ -29,7 +30,7 @@ input[type="checkbox"]{
     align-items: center;
 }
 
-.busqueda{
+.busqueda {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -37,7 +38,7 @@ input[type="checkbox"]{
     align-items: flex-end;
 }
 
-#busquedaDOS{
+#busquedaDOS {
     width: 100%;
 }
 
@@ -49,17 +50,17 @@ input[type="search"] {
     border-radius: 5px;
 }
 
-::placeholder{
+::placeholder {
     color: rgb(255, 255, 255);
 }
 
-.search{
+.search {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-#search{
+#search {
     display: none;
 }
 
@@ -80,8 +81,8 @@ input[type="search"] {
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
-    width: 210px;
-    height: 280px;
+    width: 240px;
+    height: 300px;
     border-radius: 15px 0px;
     background-color: rgba(202, 202, 202, 0.733);
     border: 1px solid rgba(0, 0, 0, 0.664);
@@ -96,27 +97,26 @@ input[type="search"] {
     width: 100%;
     height: 180px;
     margin: 0px 0px 25px 0px;
-    box-shadow: -4px -4px 10px 3px rgba(0, 0, 0, 0.52);
 }
 
 .card-imagen {
     display: relative;
     overflow: hidden;
-  }
-  
-  .zoomable {
+}
+
+.zoomable {
     transition: transform .6s;
-  
+
     display: absolute;
-  }
-  
-  .zoomable:hover {
+}
+
+.zoomable:hover {
     transform: scale(1.2);
-  }
+}
 
 .titulo_dos {
     width: 100%;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: bolder;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -144,10 +144,10 @@ input[type="search"] {
 
 .boton_d {
     width: fit-content;
-    border: 1px solid rgb(180, 0, 105);
-    background-color: rgba(92, 90, 90, 0.575);
+    border: 1px solid black;
+    background: linear-gradient(to right bottom, #009dff8f, #ec2f4b94);
     border-radius: 3px;
-    padding: 8px 7px;
+    padding: 5px 7px;
     box-shadow: -2px -2px 6px 2px rgba(58, 51, 51, 0.52);
     display: flex;
     align-items: center;
@@ -156,10 +156,10 @@ input[type="search"] {
 .boton_d a {
     text-decoration-line: none;
     color: black;
-    font-size: 15px;
+    font-size: 16px;
 }
 
-.ceroResultado{
+.ceroResultado {
     width: 700px;
     height: 38vh;
     display: flex;
@@ -167,14 +167,14 @@ input[type="search"] {
     align-items: center;
 }
 
-.sinEventos{
+.sinEventos {
     color: black;
     font-size: 20px;
 }
 
 @media screen and (max-width: 689px) {
-    main{
-        height: 77%;
+    main {
+        height: 75%;
         min-height: fit-content;
     }
 
@@ -184,8 +184,8 @@ input[type="search"] {
         align-items: flex-start;
     }
 
-    .category{
-        margin-bottom: 5px ;
+    .category {
+        margin-bottom: 5px;
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -195,7 +195,7 @@ input[type="search"] {
         font-size: 12px;
     }
 
-    .busqueda{
+    .busqueda {
         justify-content: center;
         align-items: center;
     }
@@ -208,14 +208,14 @@ input[type="search"] {
     .container_card {
         width: 100%;
         display: flex;
-        flex-direction: column;            
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
     .item {
-        width: 200px;
-        height: 260px;
+        width: 210px;
+        height: 250px;
     }
 
     .item img {
@@ -227,17 +227,18 @@ input[type="search"] {
         font-size: 14px;
     }
 
-    .ceroResultado{
+    .ceroResultado {
         width: 700px;
         height: 44vh;
     }
-    .sinEventos{
+
+    .sinEventos {
         font-size: 15px;
     }
 }
 
 @media screen and (min-width: 690px) and (max-width: 1024px) {
-    main{
+    main {
         height: fit-content;
     }
 

@@ -7,11 +7,10 @@ let arrayFiltro = []
 let tarjetasEventos = document.getElementById("tarjetas")
 var searchContainer = document.getElementById("search")
 let checkedCheckboxes = []
-let search 
+let search
 
 
-for (var i = 0; i <eventos.length; i++) {
-
+for (var i = 0; i < eventos.length; i++) {
   if (eventos[i].date > fechaBase) {
     eventosFuturos.push(eventos[i])
   } else {
@@ -19,12 +18,11 @@ for (var i = 0; i <eventos.length; i++) {
   }
 }
 
-
 var botonNavegacion = [];
 
-
 var buttonNav = document.getElementsByClassName("nav-item")
-for (var i = 0; i <buttonNav.length; i++) {
+console.log(buttonNav);
+for (var i = 0; i < buttonNav.length; i++) {
   const element = buttonNav[i];
   botonNavegacion.push(buttonNav[i].innerText)
   element.addEventListener("click", function (e) {
@@ -34,9 +32,7 @@ for (var i = 0; i <buttonNav.length; i++) {
 }
 
 function imprimir(id) {
-
   switch (id) {
-
     case "upcoming":
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
@@ -45,7 +41,6 @@ function imprimir(id) {
       eventsCategories(eventosFuturos)
       searchContainer.style.display = "flex"
       break;
-
     case "past":
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
@@ -54,21 +49,18 @@ function imprimir(id) {
       eventsCategories(eventosPasados)
       searchContainer.style.display = "flex"
       break;
-
     case "contact":
       document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       searchContainer.style.display = "none"
       imprimirForm()
       break;
-
     case "stats":
       document.getElementById("tituloEncabezado").innerHTML = "Estadísticas";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       searchContainer.style.display = "none"
       imprimirStats()
       break;
-
     default:
       document.getElementById("tituloEncabezado").innerHTML = "Inicio";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
@@ -76,11 +68,9 @@ function imprimir(id) {
       display(eventos)
       eventsCategories(eventos)
       searchContainer.style.display = "flex"
-
   }
 
 }
-
 
 function display(array) {
   var html = "";
@@ -99,35 +89,39 @@ function display(array) {
             </div>
           </div>
           `
-
   }
-
   tarjetasEventos.innerHTML = html
-
 }
 
-display(eventos)
-
-function imprimirForm(){
-  document.getElementById("tarjetas").innerHTML = `
-  
-  <section class="formulario">
-  <form class="formu">
-      <div class="formulario_dos"> 
-          <label for="nombre"></label>   
-          <input type="text" name="nombre" placeholder="Nombre" required>
-          <label for="email"></label>
-          <input type="email" name="email" placeholder="E-mail" required>
-          <label for="text"></label>
-          <textarea name="message" placeholder="Mensaje"></textarea>
-          <button id="content" type="submit" >Enviar</button>
-      </div>
-  </form>
-</section>
+function imprimirForm() {
+  document.getElementById("tarjetas").innerHTML =
+    `
+        <section class="formulario">
+                <div class="imagenForm">
+                  <img src="../Imagenes/formu.png" alt="">
+                </div>
+            <form class="formu">
+                <div class="formulario_dos">
+                  <label for="nombre"></label>   
+                  <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="formulario_dos">
+                  <label for="email"></label>
+                  <input type="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="formulario_dos">
+                  <label for="text"></label>
+                  <textarea name="message" placeholder="Mensaje"></textarea>
+                </div>
+                <div class="formulario_dos butSend">
+                  <button type="submit" value="Enviar"><a href="#">Enviar<a/></button>
+                </div>
+            </form>
+        </section>
   `
 }
 
-function imprimirStats(){
+function imprimirStats() {
   document.getElementById("tarjetas").innerHTML = `
   <table>
   <tr class="color">
@@ -204,7 +198,6 @@ function imprimirStats(){
 }
 
 var time = location.search.split("?time=")
-
 switch (time[1]) {
   case "upcoming":
     imprimir("upcoming")
@@ -225,7 +218,6 @@ switch (time[1]) {
     imprimir("home")
 
 }
-
 
 var buttonD = document.getElementById("flechaDerecha")
 buttonD.addEventListener("click", function (e) {
@@ -260,14 +252,10 @@ function nextPage(i) {
   }
 }
 
-
 var buttonI = document.getElementById("flechaIzquierda")
-console.log(buttonI);
 buttonI.addEventListener("click", function (e) {
   var paginaI = document.getElementById("tituloEncabezado").innerText
-  console.log(paginaI);
   if (botonNavegacion.indexOf(paginaI) <= 4) {
-    console.log(botonNavegacion);
     antPage(botonNavegacion.indexOf(paginaI) - 1);
   } else {
     antPage(0)
@@ -296,77 +284,65 @@ function antPage(i) {
       imprimir("stats")
   }
 }
-console.log(antPage);
 
 
 var inputSearch = document.getElementById("Search")
-
 inputSearch.addEventListener("keyup", function (evento) {
   var datoInput = evento.target.value
   search = datoInput.trim().toLowerCase()
   filtrosCombinados()
 })
 
-function eventsCategories(array){
+function eventsCategories(array) {
   let categories = array.map(evento => evento.category)
   let unica = new Set(categories)
   let lastCategories = [...unica]
   let categoriasEventos = ""
-    lastCategories.map(category =>
-        categoriasEventos +=
+  lastCategories.map(category =>
+    categoriasEventos +=
     `
     <label><input type="checkbox" value="${category}"> ${category}</label>
     `
-    )
-    document.getElementById("container").innerHTML = categoriasEventos
-    checkboxListener()
+  )
+  document.getElementById("container").innerHTML = categoriasEventos
+  checkboxListener()
 }
 
-
-function checkboxListener(){
-var checkboxs = document.querySelectorAll('input[type=checkbox]')
-      for(i = 0; i< checkboxs.length; i++){
-        checkboxs[i].addEventListener("change", function(){
-          checkedCheckboxes = []
-        for(i = 0; i < checkboxs.length; i++){
-          if(checkboxs[i].checked){
-            checkedCheckboxes.push(checkboxs[i].value)
-          }
+function checkboxListener() {
+  var checkboxs = document.querySelectorAll('input[type=checkbox]')
+  for (i = 0; i < checkboxs.length; i++) {
+    checkboxs[i].addEventListener("change", function () {
+      checkedCheckboxes = []
+      for (i = 0; i < checkboxs.length; i++) {
+        if (checkboxs[i].checked) {
+          checkedCheckboxes.push(checkboxs[i].value)
         }
-        filtrosCombinados()
-      })
-    }
+      }
+      filtrosCombinados()
+    })
   }
+}
 
-  function filtrosCombinados() {
-    var filtrado = []
-    if (search !== "" && checkedCheckboxes.length > 0) {
-
-        checkedCheckboxes.map(category => filtrado.push(...arrayFiltro.filter(evento =>
-            evento.name.toLowerCase().includes(search) && evento.category === category)
-        ))
-        
-    }
-
-    else if (search !== "" && checkedCheckboxes.length == 0) {
-        filtrado = arrayFiltro.filter(evento => evento.name.toLowerCase().includes(search))
-       
-    }
-
-    else if (search === "" && checkedCheckboxes.length > 0) {
-
-        checkedCheckboxes.map(category =>
-            filtrado.push(...arrayFiltro.filter(evento => evento.category === category))
-        )
-
-    }
-    else {
-        filtrado = arrayFiltro
-       
-    }
-
-    filtrado.length > 0 ? 
-    display(filtrado) : 
+function filtrosCombinados() {
+  var filtrado = []
+  if (search !== "" && checkedCheckboxes.length > 0) {
+    checkedCheckboxes.map(category => filtrado.push(...arrayFiltro.filter(evento =>
+      evento.name.toLowerCase().includes(search) && evento.category === category)
+    ))
+  }
+  else if (search !== "" && checkedCheckboxes.length == 0) {
+    filtrado = arrayFiltro.filter(evento => evento.name.toLowerCase().includes(search))
+  }
+  else if (search === "" && checkedCheckboxes.length > 0) {
+    checkedCheckboxes.map(category =>
+      filtrado.push(...arrayFiltro.filter(evento => evento.category === category))
+    )
+  }
+  else {
+    filtrado = arrayFiltro
+  }
+  filtrado.length > 0 ?
+    display(filtrado) :
     tarjetasEventos.innerHTML = `
     <div class="ceroResultado">
     <h1 class="sinEventos" >No se encontraron eventos para tu busqueda...</h1>

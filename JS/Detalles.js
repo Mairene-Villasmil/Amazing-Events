@@ -19,7 +19,7 @@ detalleVista = `
     </div>
     <div class="general">
         <div class="fotos_detalles">
-            <img src="../Imagenes/${eventoDetalles[0].image}" alt="${eventoDetalles[0].name}">
+            <img src="../Imagenes/${eventoDetalles[0].image}" class="card-img-top zoomable" alt="${eventoDetalles[0].name}">
         </div>
         <div class="info_detalles">
             <p class="detalle">Descripción: ${eventoDetalles[0].description}</p>

@@ -1,16 +1,12 @@
 main {
     width: 100%;
-    height: 77%;
-    min-height: 77vh;
+    height: 75%;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-}
-
-.home{
-    height: 120px;
-    margin-bottom: 70px;
+    background-image: url(../Imagenes/fondo-home.jpg);
 }
 
 #tarjetas{
@@ -42,7 +38,8 @@ section{
     align-items: center;
     border-radius: 20px 0px;
     box-shadow: -6px -6px 10px 6px rgba(0, 0, 0, 0.562);
-    background-color: rgba(212, 210, 208, 0.582);
+    background-color: rgba(212, 210, 208, 0.87);
+    padding-top: 5px;
 }
 
 .general{
@@ -78,9 +75,25 @@ section{
     box-shadow: -4px -4px 10px 3px rgba(0, 0, 0, 0.52);
 }
 
+.card-imagen {
+    display: relative;
+    overflow: hidden;
+}
+
+.zoomable {
+    transition: transform .5s;
+
+    display: absolute;
+}
+
+.zoomable:hover {
+    transform: scale(1.1);
+}
+
 .detalle{
     font-size: 16px;
     margin: 20px 5px;
+    font-weight: bold;
 }
 
 .detalles_abajo{ 
@@ -90,9 +103,11 @@ section{
     justify-content: space-around;
     align-items: center;
 }
+
 .detalles_uno{
     width: 50%;
 }
+
 .detalles_dos{
     width: 50%;
 }

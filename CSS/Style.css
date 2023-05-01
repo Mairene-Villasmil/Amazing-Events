@@ -8,22 +8,21 @@
 header {
     width: 100%;
     height: 13vh;
-    background: linear-gradient(rgba(39, 39, 39, 0.849), rgba(134, 165, 196, 0.614), rgb(214, 181, 186),  rgba(161, 161, 161, 0.733));
+    background: linear-gradient(rgba(39, 39, 39, 0.849), rgba(134, 165, 196, 0.614), rgb(214, 181, 186), rgba(161, 161, 161, 0.733));
 }
 
 body {
     background-color: rgba(161, 161, 161, 0.733);
 }
 
-.nav-nuevo{
+.nav-nuevo {
     display: flex;
-	position: relative;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-	height: 80px;
-	z-index: 2;
+    height: 80px;
 }
 
 .imagen_logo img {
@@ -32,7 +31,7 @@ body {
     margin: 10px 10px;
 }
 
-.nav_ul{
+.nav_ul {
     display: flex;
     flex-direction: row;
     margin: 25px 0px 10px 0px;
@@ -44,34 +43,36 @@ body {
 }
 
 .nav-item a {
-    font-size: 18px;
+    font-size: 20px;
     text-decoration-line: none;
     color: rgb(0, 0, 0);
     font-weight: bolder;
-    margin: 0px 5px;
+    margin: 0px 8px;
+    padding: 0 5px;
 }
 
-.nav-item a:hover{
-    
+.nav-item a:hover {
+    border-bottom: 4px groove #ec2f4b69;
+    border-top: 4px groove #009dff6c;
 }
 
 .nav-tab:not(:last-child) {
-	padding: 10px 25px;
-	margin: 0;
-	border-right: 1px solid #eee;
+    padding: 10px 25px;
+    margin: 0;
+    border-right: 1px solid #eee;
 }
 
 .nav-tab:last-child {
-	padding: 10px 0 0 25px;
+    padding: 10px 0 0 25px;
 }
 
 .nav-tab,
 .menu-btn {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .nav-tabs {
@@ -119,32 +120,34 @@ body {
     margin-top: 4px;
 }
 
-#menuToggle:checked + .menu-btn .menu {
+#menuToggle:checked+.menu-btn .menu {
     transition: transform 0.3s ease;
 }
 
-#menuToggle:checked + .menu-btn .menu:nth-child(1) {
+#menuToggle:checked+.menu-btn .menu:nth-child(1) {
     transform: translate3d(0, 6px, 0) rotate(45deg);
 }
 
-#menuToggle:checked + .menu-btn .menu:nth-child(2) {
+#menuToggle:checked+.menu-btn .menu:nth-child(2) {
     transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
     opacity: 0;
 }
 
-#menuToggle:checked + .menu-btn .menu:nth-child(3) {
+#menuToggle:checked+.menu-btn .menu:nth-child(3) {
     transform: translate3d(0, -6px, 0) rotate(-45deg);
 }
 
-#menuToggle:checked ~ .nav-container {
+#menuToggle:checked~.nav-container {
     z-index: 1;
     display: flex;
     animation: menu-slide-left 0.3s ease;
 }
+
 @keyframes menu-slide-left {
     0% {
         transform: translateX(200px);
     }
+
     to {
         transform: translateX(0);
     }
@@ -162,7 +165,7 @@ body {
     margin-bottom: 20px;
 }
 
-.navegacion_tituloDos{
+.navegacion_tituloDos {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -190,6 +193,7 @@ body {
 
 .navegacion_tituloDos i {
     font-size: 40px;
+    font-weight: bolder;
     text-align: center;
     color: white;
     text-shadow: 5px 5px 2px rgba(0, 0, 0, 1);
@@ -207,13 +211,13 @@ body {
 
 footer {
     width: 100%;
-    height: 10vh;
-    background: linear-gradient(rgba(161, 77, 105, 0.267), rgb(214, 181, 186), rgba(134, 165, 196, 0.614), rgba(27, 27, 27, 0.849));
+    height: 12vh;
+    background: linear-gradient(rgba(161, 161, 161, 0.733), rgb(214, 181, 186), rgba(134, 165, 196, 0.614), rgba(39, 39, 39, 0.849));
 }
 
 .footer {
     width: 100%;
-    height: 10vh;
+    height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -228,18 +232,41 @@ footer {
     list-style-type: none;
 }
 
-.iconos li i{
+.iconos a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.instagram,
+.facebook,
+.whatsapp {
     display: flex;
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    margin: 10px 20px;
-    font-size: 35px;
+    margin: 10px 10px;
+    font-size: 45px;
+    padding: 9px 11px 8px 11px;
+    outline: solid transparent 2px;
+    border-radius: 30px;
 }
 
-.iconos li a{
-    text-decoration-line: none;
-    color: black;
+.iconos .instagram:hover {
+    font-size: 40px;
+    color: white;
+    background: linear-gradient(#ffd500e7, #ff7b00e1, #ff006ae1, #d300c5e0, #7538fad8);
+}
+
+.iconos .facebook:hover {
+    font-size: 40px;
+    color: white;
+    background-color: #2e5bbb;
+}
+
+.iconos .whatsapp:hover {
+    font-size: 40px;
+    color: white;
+    background-color: #28bd2f;
 }
 
 .cohort p {
@@ -268,17 +295,18 @@ footer {
     .nav-item a {
         font-size: 15px;
     }
+
     .nav-container {
-		position: fixed;
-		display: none;
-		overflow-y: auto;
-		z-index: -1;
-		top: 0;
-		right: 0;
-		width: 250px;
-		height: 350px;
+        position: fixed;
+        display: none;
+        overflow-y: auto;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 350px;
         background: linear-gradient(rgba(117, 151, 185, 0.644), rgb(214, 181, 186));
-	}
+    }
 
     .home p,
     .navegacion_tituloDos a {
@@ -296,8 +324,8 @@ footer {
 }
 
 @media screen and (max-width: 689px) {
-    main{
-        height: 73vh;
+    main {
+        height: 75vh;
     }
 
     .imagen_logo img {
@@ -309,12 +337,12 @@ footer {
         font-size: 13px;
     }
 
-    .nav_ul{
+    .nav_ul {
         flex-direction: column;
         margin: 0px;
     }
 
-    header li a{
+    header li a {
         font-size: 12px;
         text-align: right;
     }
@@ -324,16 +352,16 @@ footer {
     }
 
     .nav-container {
-		position: fixed;
-		display: none;
-		overflow-y: auto;
-		z-index: -1;
-		top: 0;
-		right: 0;
-		width: 200px;
-		height: fit-content;
+        position: fixed;
+        display: none;
+        overflow-y: auto;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: fit-content;
         background: linear-gradient(rgba(117, 151, 185, 0.644), rgb(214, 181, 186));
-	}
+    }
 
     .home {
         width: 100%;
@@ -345,14 +373,28 @@ footer {
         font-size: 25px;
     }
 
-    .home a i{
+    .home a i {
         font-size: 20px;
         margin: 0px 30px;
     }
 
-    .iconos li i{
+    .instagram,
+    .facebook,
+    .whatsapp {
+        margin: 0px;
+        font-size: 25px;
+    }
+
+    .iconos .instagram:hover {
         font-size: 20px;
-        margin: 5px;
+    }
+    
+    .iconos .facebook:hover {
+        font-size: 20px;
+    }
+    
+    .iconos .whatsapp:hover {
+        font-size: 20px;
     }
 
     .iconos ul {
@@ -377,8 +419,8 @@ footer {
     }
 
     .copyright {
-        font-size: 6px;
-        font-weight:bold;
+        font-size: 8px;
+        font-weight: bold;
         margin: 0px 5px 0px 0px;
     }
 
