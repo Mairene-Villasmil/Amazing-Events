@@ -1,5 +1,5 @@
-const fechaBase = datos.fechaActual
-const eventos = datos.eventos
+let fechaBase
+let eventos
 const container = document.getElementById("container")
 const eventosPasados = []
 const eventosFuturos = []
@@ -8,20 +8,24 @@ let tarjetasEventos = document.getElementById("tarjetas")
 var searchContainer = document.getElementById("search")
 let checkedCheckboxes = []
 let search
+var botonNavegacion = []
 
+async function getData(){
+  let datosApi
+  await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
+  .then(response => response.json())
+  .then(json => datosApi = json)
 
-for (var i = 0; i < eventos.length; i++) {
-  if (eventos[i].date > fechaBase) {
-    eventosFuturos.push(eventos[i])
-  } else {
-    eventosPasados.push(eventos[i])
-  }
+  eventos =  datosApi.eventos
+  fechaBase = datosApi.fechaActual
+
+  imprimir()
 }
 
-var botonNavegacion = [];
+getData()
+
 
 var buttonNav = document.getElementsByClassName("nav-item")
-console.log(buttonNav);
 for (var i = 0; i < buttonNav.length; i++) {
   const element = buttonNav[i];
   botonNavegacion.push(buttonNav[i].innerText)
@@ -34,6 +38,7 @@ for (var i = 0; i < buttonNav.length; i++) {
 function imprimir(id) {
   switch (id) {
     case "upcoming":
+      let eventosFuturos = eventos.filter(evento => evento.date > fechaBase)
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       arrayFiltro = eventosFuturos
@@ -42,6 +47,7 @@ function imprimir(id) {
       searchContainer.style.display = "flex"
       break;
     case "past":
+      let eventosPasados = eventos.filter(evento => evento.date < fechaBase)
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       arrayFiltro = eventosPasados
@@ -77,7 +83,7 @@ function display(array) {
   for (var i = 0; i < array.length; i++) {
     html +=
       `<div class="item">
-            <img src="./Imagenes/${array[i].image}" class="card-img-top zoomable" alt="${array[i].name}">
+            <img src="${array[i].image}" class="card-img-top zoomable" alt="${array[i].name}">
             <p class="titulo_dos">${array[i].name}</p>
             <div class="detalles">
               <p class="precio">Precio: $${array[i].price}</p>
@@ -197,27 +203,7 @@ function imprimirStats() {
   `
 }
 
-var time = location.search.split("?time=")
-switch (time[1]) {
-  case "upcoming":
-    imprimir("upcoming")
-    break;
 
-  case "past":
-    imprimir("past")
-    break;
-  case "contact":
-    imprimir("contact")
-    break;
-
-  case "stats":
-    imprimir("stats")
-    break;
-
-  default:
-    imprimir("home")
-
-}
 
 var buttonD = document.getElementById("flechaDerecha")
 buttonD.addEventListener("click", function (e) {

@@ -83,10 +83,10 @@ input[type="search"] {
     overflow: hidden;
     width: 240px;
     height: 300px;
-    border-radius: 15px 0px;
+    border-radius: 10px;
     background-color: rgba(202, 202, 202, 0.733);
     border: 1px solid rgba(0, 0, 0, 0.664);
-    margin: 30px;
+    margin: 20px;
 }
 
 .precio {
@@ -178,6 +178,16 @@ input[type="search"] {
         min-height: fit-content;
     }
 
+    .ceroResultado {
+        width: 200px;
+
+    }
+    
+    .sinEventos {
+        font-size: 15px;
+        text-align: center;
+    }
+
     .container {
         flex-direction: column;
         justify-content: center;
@@ -225,15 +235,6 @@ input[type="search"] {
 
     .titulo_dos {
         font-size: 14px;
-    }
-
-    .ceroResultado {
-        width: 700px;
-        height: 44vh;
-    }
-
-    .sinEventos {
-        font-size: 15px;
     }
 }
 
