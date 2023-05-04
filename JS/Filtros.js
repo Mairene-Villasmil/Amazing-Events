@@ -1,22 +1,22 @@
 let fechaBase
 let eventos
 const container = document.getElementById("container")
-const eventosPasados = []
-const eventosFuturos = []
 let arrayFiltro = []
+let formulario = document.getElementById("form")
+let stats = document.getElementById("statsDos")
 let tarjetasEventos = document.getElementById("tarjetas")
 var searchContainer = document.getElementById("search")
 let checkedCheckboxes = []
-let search
+let search = ""
 var botonNavegacion = []
 
-async function getData(){
+async function getData() {
   let datosApi
   await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
-  .then(response => response.json())
-  .then(json => datosApi = json)
+    .then(response => response.json())
+    .then(json => datosApi = json)
 
-  eventos =  datosApi.eventos
+  eventos = datosApi.eventos
   fechaBase = datosApi.fechaActual
 
   imprimir()
@@ -42,67 +42,36 @@ function imprimir(id) {
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Futuros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       arrayFiltro = eventosFuturos
+      searchContainer.style.display = "flex"
+      tarjetasEventos.style.display = "flex"
+      formulario.style.display = "none"
+      stats.style.display = "none"
+      checkedCheckboxes = []
       display(eventosFuturos)
       eventsCategories(eventosFuturos)
-      searchContainer.style.display = "flex"
       break;
     case "past":
       let eventosPasados = eventos.filter(evento => evento.date < fechaBase)
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       arrayFiltro = eventosPasados
+      searchContainer.style.display = "flex"
+      tarjetasEventos.style.display = "flex"
+      formulario.style.display = "none"
+      stats.style.display = "none"
+      checkedCheckboxes = []
       display(eventosPasados)
       eventsCategories(eventosPasados)
-      searchContainer.style.display = "flex"
       break;
     case "contact":
       document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
+      tarjetasEventos.style.display = "none"
       searchContainer.style.display = "none"
-      imprimirForm()
-      break;
-    case "stats":
-      document.getElementById("tituloEncabezado").innerHTML = "Estadísticas";
-      document.getElementById("navegacion-titulo").classList.add('nav_home');
-      searchContainer.style.display = "none"
-      imprimirStats()
-      break;
-    default:
-      document.getElementById("tituloEncabezado").innerHTML = "Inicio";
-      document.getElementById("navegacion-titulo").classList.add('nav_home');
-      arrayFiltro = eventos
-      display(eventos)
-      eventsCategories(eventos)
-      searchContainer.style.display = "flex"
-  }
-
-}
-
-function display(array) {
-  var html = "";
-  for (var i = 0; i < array.length; i++) {
-    html +=
-      `<div class="item">
-            <img src="${array[i].image}" class="card-img-top zoomable" alt="${array[i].name}">
-            <p class="titulo_dos">${array[i].name}</p>
-            <div class="detalles">
-              <p class="precio">Precio: $${array[i].price}</p>
-            <p>
-                    <button class="btn bt-xs primario botones boton_d"  data-toggle="modal" data-target="#Visualizar">
-                    <a href="./Pages/Detalles.html?id=${array[i].id}">Ver Más</a>
-                    </button>
-            </p>
-            </div>
-          </div>
-          `
-  }
-  tarjetasEventos.innerHTML = html
-}
-
-function imprimirForm() {
-  document.getElementById("tarjetas").innerHTML =
-    `
-        <section class="formulario">
+      stats.style.display = "none"
+      formulario.style.display = "flex"
+      formulario.innerHTML =`
+      <section class="formulario">
                 <div class="imagenForm">
                   <img src="../Imagenes/formu.png" alt="">
                 </div>
@@ -124,86 +93,74 @@ function imprimirForm() {
                 </div>
             </form>
         </section>
-  `
+      `
+      break;
+    case "stats":
+      document.getElementById("tituloEncabezado").innerHTML = "Estadísticas";
+      document.getElementById("navegacion-titulo").classList.add('nav_home');
+      tarjetasEventos.style.display = "none"
+      searchContainer.style.display = "none"
+      formulario.style.display = "none"
+      stats.style.display = "flex"
+      initStats()
+      break;
+    default:
+      document.getElementById("tituloEncabezado").innerHTML = "Inicio";
+      document.getElementById("navegacion-titulo").classList.add('nav_home');
+      arrayFiltro = eventos
+      checkedCheckboxes = []
+      tarjetasEventos.style.display = "flex"
+      searchContainer.style.display = "flex"
+      stats.style.display = "none"
+      formulario.style.display = "none"
+      display(eventos)
+      eventsCategories(eventos)
+
+  }
+
 }
 
-function imprimirStats() {
-  document.getElementById("tarjetas").innerHTML = `
-  <table>
-  <tr class="color">
-    <th colspan="3">Estadísticas de Eventos</th>
-  </tr>
-  <tr class="titulo">
-    <th>Eventos con Mayor Porcentaje de Asistencia</th>
-    <th>Eventos con Menor Porcentaje de Asistencia</th>
-    <th>Eventos de Mayor Capacidad</th>
-  </tr>
-  <tr>
-    <td>Metallica en Concierto</td>
-    <td>Fiesta de Disfraces</td>
-    <td>Metallica en Concierto</td>
-  </tr>
-  <tr>
-    <td>Feria del libro Escolar</td>
-    <td>Avengers</td>
-    <td>Feria del libro Escolar</td>
-  </tr>
-  <tr class="color">
-    <th colspan="3">Estadisticas de Eventos Próximos por Catgoría</th>
-  </tr>
-  <tr class="titulo">
-    <th>Categorías</th>
-    <th>Ingresos</th>
-    <th>Porcentaje de Estimación</th>
-  </tr>
-  <tr>
-    <td>Metallica en Concierto</td>
-    <td>Concierto de Música</td>
-    <td>138.000</td>
-  </tr>
-  <tr>
-    <td>Noche de Halloween</td>
-    <td>Fiesta de Disfraces</td>
-    <td>9.000</td>
-  </tr>
-  <tr>
-    <td>Avengers</td>
-    <td>Vamos al Cine</td>
-    <td>9.000</td>
-  </tr>
-  <tr class="color">
-    <th colspan="3">Estadisticas de Eventos Pasados por Catgoría</th>
-  </tr>
-  <tr class="titulo">
-    <th>Categorías</th>
-    <th>Ingresos</th>
-    <th>Porcentaje de Asistencia</th>
-  </tr>
-  <tr>
-    <td>10K por la vida</td>
-    <td>Carrera</td>
-    <td>25.698</td>
-  </tr>
-  <tr>
-    <td>Feria del libro Escolar</td>
-    <td>Intercambio de Libros</td>
-    <td>123.286</td>
-  </tr>
-  <tr>
-    <td>Parque Jurásico</td>
-    <td>Salida al Museo</td>
-    <td>65.892</td>
-  </tr>
-  <tr>
-    <td>Fiesta de las Colectividades</td>
-    <td>Feria de Comida</td>
-    <td>42.756</td>
-  </tr>
-</table>
-  `
+function display(array) {
+  var html = "";
+  for (var i = 0; i < array.length; i++) {
+    html +=
+      `<div class="item">
+            <img src="${array[i].image}" class="card-img-top zoomable" alt="${array[i].name}">
+            <p class="titulo_dos">${array[i].name}</p>
+            <div class="detalles">
+              <p class="precio">Precio: $${array[i].price}</p>
+            <p>
+                    <button class="botones boton_d">
+                    <a href="./Pages/Detalles.html?id=${array[i].id}">Ver Más</a>
+                    </button>
+            </p>
+            </div>
+          </div>
+          `
+  }
+  tarjetasEventos.innerHTML = html
 }
 
+var time = location.search.split("?time=")
+console.log(time);
 
+switch (time[1]) {
+  case "past":
+    display("past")
+    break;
+  case "upcoming":
+    display("upcoming")
+    break;
+  case "stats":
+    display("stats")
+    break;
+  case "contact":
+    display("contact")
+    break;
+  default:
+    display("home")
+
+}
 
 var buttonD = document.getElementById("flechaDerecha")
 buttonD.addEventListener("click", function (e) {
