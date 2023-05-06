@@ -1,23 +1,26 @@
-var id = location.search.split("?id=").filter(Number)
-console.log(id);
-var selectId = id[0]
-console.log(selectId);
-const eventoDetalles = [];
-console.log(eventoDetalles);
+
 async function getData() {
     let datosApi
     await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
-      .then(response => response.json())
-      .then(json => datosApi = json)
+        .then(response => response.json())
+        .then(json => datosApi = json)
 
-    eventoDetalles = datosApi.eventoDetalles
-    detalleVista()
-  }
-  console.log(getData);
+    eventos = datosApi.eventos
 
-function detalleVista(){
-var detalleVista =
-detalleVista = `
+    let id = location.search.split("?id=").filter(Number)
+    let selectId = id[0]
+    let eventoDetalles = eventos.filter(evento => evento.id == selectId)
+
+    detalleVista(eventoDetalles)
+}
+
+getData()
+
+
+function detalleVista(eventoDetalles) {
+
+    var detalleVista = document.getElementById("contenedor_detalles")
+    detalleVista.innerHTML = `
 <div class="contenedor">
     <div class="titulo_tarjeta">
         <p class="titulo_uno">${eventoDetalles[0].name}</p>
@@ -45,7 +48,7 @@ detalleVista = `
     </div>
 </div>
         `
-        document.getElementById("contenedor_detalles").innerHTML=detalleVista
+
 
 }
 

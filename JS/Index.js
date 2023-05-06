@@ -1,6 +1,6 @@
 let fechaBase
-let eventos
-const container = document.getElementById("container")
+let eventos = []
+let container = document.getElementById("container")
 let arrayFiltro = []
 let formulario = document.getElementById("form")
 let stats = document.getElementById("statsDos")
@@ -11,6 +11,7 @@ let search = ""
 var botonNavegacion = []
 
 async function getData() {
+
   let datosApi
   await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
     .then(response => response.json())
@@ -18,8 +19,8 @@ async function getData() {
 
   eventos = datosApi.eventos
   fechaBase = datosApi.fechaActual
+  rutasPaginas()
 
-  imprimir()
 }
 
 getData()
@@ -50,6 +51,7 @@ function imprimir(id) {
       display(eventosFuturos)
       eventsCategories(eventosFuturos)
       break;
+
     case "past":
       let eventosPasados = eventos.filter(evento => evento.date < fechaBase)
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
@@ -63,6 +65,7 @@ function imprimir(id) {
       display(eventosPasados)
       eventsCategories(eventosPasados)
       break;
+
     case "contact":
       document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
@@ -77,7 +80,7 @@ function imprimir(id) {
                 </div>
             <form class="formu">
                 <div class="formulario_dos">
-                  <label for="nombre"></label>   
+                  <label for="nombre"></label>
                   <input type="text" name="nombre" placeholder="Nombre" required>
                 </div>
                 <div class="formulario_dos">
@@ -95,6 +98,7 @@ function imprimir(id) {
         </section>
       `
       break;
+
     case "stats":
       document.getElementById("tituloEncabezado").innerHTML = "Estadísticas";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
@@ -104,6 +108,7 @@ function imprimir(id) {
       stats.style.display = "flex"
       initStats()
       break;
+
     default:
       document.getElementById("tituloEncabezado").innerHTML = "Inicio";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
@@ -120,7 +125,9 @@ function imprimir(id) {
 
 }
 
+
 function display(array) {
+
   var html = "";
   for (var i = 0; i < array.length; i++) {
     html +=
@@ -141,25 +148,27 @@ function display(array) {
   tarjetasEventos.innerHTML = html
 }
 
+
 var time = location.search.split("?time=")
-console.log(time);
+function rutasPaginas(){
 
 switch (time[1]) {
   case "past":
-    display("past")
-    break;
+   imprimir("past")
+   break;
   case "upcoming":
-    display("upcoming")
-    break;
-  case "stats":
-    display("stats")
-    break;
-  case "contact":
-    display("contact")
-    break;
-  default:
-    display("home")
+   imprimir("upcoming")
+   break;
+ case "stats":
+   imprimir("stats")
+   break;
+ case "contact":
+   imprimir("contact")
+   break;
+ default:
+   imprimir("home")
 
+}
 }
 
 var buttonD = document.getElementById("flechaDerecha")
