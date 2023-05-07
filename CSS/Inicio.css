@@ -112,6 +112,7 @@ input[type="search"] {
 
 .zoomable:hover {
     transform: scale(1.2);
+    box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.75);
 }
 
 .titulo_dos {
@@ -210,7 +211,7 @@ input[type="search"] {
     }
 
     input[type="search"] {
-        width: 250px;
+        width: 220px;
         height: 28px;
     }
 
@@ -234,6 +235,11 @@ input[type="search"] {
 
     .titulo_dos {
         font-size: 14px;
+    }
+
+    .detalles p,
+    .boton_d a{
+        font-size: 12px;
     }
 }
 

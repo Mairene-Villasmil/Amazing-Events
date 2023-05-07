@@ -3,7 +3,7 @@ let eventos = []
 let container = document.getElementById("container")
 let arrayFiltro = []
 let formulario = document.getElementById("form")
-let stats = document.getElementById("statsDos")
+let estadisticasDetalles = document.getElementById("statsDos")
 let tarjetasEventos = document.getElementById("tarjetas")
 var searchContainer = document.getElementById("search")
 let checkedCheckboxes = []
@@ -11,7 +11,6 @@ let search = ""
 var botonNavegacion = []
 
 async function getData() {
-
   let datosApi
   await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
     .then(response => response.json())
@@ -20,11 +19,8 @@ async function getData() {
   eventos = datosApi.eventos
   fechaBase = datosApi.fechaActual
   rutasPaginas()
-
 }
-
 getData()
-
 
 var buttonNav = document.getElementsByClassName("nav-item")
 for (var i = 0; i < buttonNav.length; i++) {
@@ -33,8 +29,7 @@ for (var i = 0; i < buttonNav.length; i++) {
   element.addEventListener("click", function (e) {
     imprimir(e.target.id);
 
-  })
-}
+})}
 
 function imprimir(id) {
   switch (id) {
@@ -46,7 +41,7 @@ function imprimir(id) {
       searchContainer.style.display = "flex"
       tarjetasEventos.style.display = "flex"
       formulario.style.display = "none"
-      stats.style.display = "none"
+      estadisticasDetalles.style.display = "none"
       checkedCheckboxes = []
       display(eventosFuturos)
       eventsCategories(eventosFuturos)
@@ -60,18 +55,18 @@ function imprimir(id) {
       searchContainer.style.display = "flex"
       tarjetasEventos.style.display = "flex"
       formulario.style.display = "none"
-      stats.style.display = "none"
+      estadisticasDetalles.style.display = "none"
       checkedCheckboxes = []
       display(eventosPasados)
       eventsCategories(eventosPasados)
       break;
 
     case "contact":
-      document.getElementById("tituloEncabezado").innerHTML = "Contacta con Nosotros";
+      document.getElementById("tituloEncabezado").innerHTML = "Contactanos";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       tarjetasEventos.style.display = "none"
       searchContainer.style.display = "none"
-      stats.style.display = "none"
+      estadisticasDetalles.style.display = "none"
       formulario.style.display = "flex"
       formulario.innerHTML =`
       <section class="formulario">
@@ -89,14 +84,38 @@ function imprimir(id) {
                 </div>
                 <div class="formulario_dos">
                   <label for="text"></label>
-                  <textarea name="message" placeholder="Mensaje"></textarea>
+                  <textarea type="message" name="message" placeholder="Mensaje"></textarea>
                 </div>
                 <div class="formulario_dos butSend">
-                  <button type="submit" value="Enviar"><a href="#">Enviar<a/></button>
+                  <button type="submit" value="submit" id="enviar">Enviar</button>
                 </div>
             </form>
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>¡Gracias por comunicarte con nosotros!</p>
+              </div>
+            </div>
         </section>
       `
+      let form = document.querySelector("form")
+      const modal = document.querySelector('#modal')
+      const cerrar = document.querySelector('.close')
+      form.addEventListener("submit", (event)=>{actionForm(event)
+      modal.style.display = "block"
+      })
+
+      function modalForm(){
+        modal.style.display = "none";
+        location.reload()
+      }
+      cerrar.addEventListener("click", modalForm);
+
+      window.addEventListener("click", (event)=>{
+        if(event.target == modal){
+        modal.style.display = "none"
+        }
+      })
       break;
 
     case "stats":
@@ -105,7 +124,41 @@ function imprimir(id) {
       tarjetasEventos.style.display = "none"
       searchContainer.style.display = "none"
       formulario.style.display = "none"
-      stats.style.display = "flex"
+      estadisticasDetalles.style.display = "flex"
+      estadisticasDetalles.innerHTML = `
+      <table>
+        <tr class="color">
+          <th colspan="3">Estadísticas de Eventos</th>
+        </tr>
+        <tr class="titulo">
+          <th>Evento con Mayor Porcentaje de Asistencia</th>
+          <th>Evento con Menor Porcentaje de Asistencia</th>
+          <th>Evento de Mayor Capacidad</th>
+        </tr>
+        <tr id="mayoresymenores">
+        </tr>
+      </table>  
+      <table id="statsFuturos">
+        <tr class="color">
+          <th colspan="3">Estadisticas de Eventos Futuros por Categoría</th>
+        </tr>
+        <tr class="titulo">
+          <th>Categorías</th>
+          <th>Estimacion de Ingresos</th>
+          <th>Asistencia Estimada</th>
+        </tr>
+      </table>  
+      <table id="statsPasados">
+        <tr class="color">
+            <th colspan="3">Estadisticas de Eventos Pasados por Categoría</th>
+        </tr>
+        <tr class="titulo">
+          <th>Categorías</th>
+          <th>Ingresos</th>
+          <th>Asistencia</th>
+        </tr>
+      </table>
+      `
       initStats()
       break;
 
@@ -116,18 +169,13 @@ function imprimir(id) {
       checkedCheckboxes = []
       tarjetasEventos.style.display = "flex"
       searchContainer.style.display = "flex"
-      stats.style.display = "none"
+      estadisticasDetalles.style.display = "none"
       formulario.style.display = "none"
       display(eventos)
       eventsCategories(eventos)
-
-  }
-
-}
-
+}}
 
 function display(array) {
-
   var html = "";
   for (var i = 0; i < array.length; i++) {
     html +=
@@ -148,7 +196,6 @@ function display(array) {
   tarjetasEventos.innerHTML = html
 }
 
-
 var time = location.search.split("?time=")
 function rutasPaginas(){
 
@@ -168,8 +215,7 @@ switch (time[1]) {
  default:
    imprimir("home")
 
-}
-}
+}}
 
 var buttonD = document.getElementById("flechaDerecha")
 buttonD.addEventListener("click", function (e) {
@@ -178,8 +224,7 @@ buttonD.addEventListener("click", function (e) {
     nextPage(botonNavegacion.indexOf(pagina) + 1);
   } else {
     nextPage(0)
-  }
-})
+  }})
 
 function nextPage(i) {
   switch (i) {
@@ -211,8 +256,7 @@ buttonI.addEventListener("click", function (e) {
     antPage(botonNavegacion.indexOf(paginaI) - 1);
   } else {
     antPage(0)
-  }
-})
+  }})
 
 function antPage(i) {
   switch (i) {
@@ -237,6 +281,15 @@ function antPage(i) {
   }
 }
 
+function actionForm(event){
+  event.preventDefault()
+  let formDatos = {
+      name: event.target[0].value,
+      email: event.target[1].value,
+      message: event.target[2].value
+  }
+  console.log(formDatos);
+}
 
 var inputSearch = document.getElementById("Search")
 inputSearch.addEventListener("keyup", function (evento) {
@@ -279,11 +332,11 @@ function filtrosCombinados() {
   var filtrado = []
   if (search !== "" && checkedCheckboxes.length > 0) {
     checkedCheckboxes.map(category => filtrado.push(...arrayFiltro.filter(evento =>
-      evento.name.toLowerCase().includes(search) && evento.category === category)
+      evento.name.toLowerCase().trim().includes(search) && evento.category === category)
     ))
   }
   else if (search !== "" && checkedCheckboxes.length == 0) {
-    filtrado = arrayFiltro.filter(evento => evento.name.toLowerCase().includes(search))
+    filtrado = arrayFiltro.filter(evento => evento.name.toLowerCase().trim().includes(search))
   }
   else if (search === "" && checkedCheckboxes.length > 0) {
     checkedCheckboxes.map(category =>
