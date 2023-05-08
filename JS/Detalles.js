@@ -1,4 +1,3 @@
-
 async function getData() {
     let datosApi
     await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
