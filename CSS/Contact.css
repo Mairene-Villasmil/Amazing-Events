@@ -148,6 +148,7 @@ textarea {
 
     .formulario {
         width: 100%;
+        height: 47vh;
         flex-direction: column;
     }
 
