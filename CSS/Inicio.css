@@ -100,14 +100,11 @@ input[type="search"] {
 }
 
 .card-imagen {
-    display: relative;
     overflow: hidden;
 }
 
 .zoomable {
     transition: transform .6s;
-
-    display: absolute;
 }
 
 .zoomable:hover {

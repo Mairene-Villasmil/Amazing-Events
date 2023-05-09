@@ -23,10 +23,11 @@ async function getData() {
 getData()
 
 var buttonNav = document.getElementsByClassName("nav-item")
-for (var i = 0; i < buttonNav.length; i++) {
+for (var i = 0; i <buttonNav.length; i++) {
   const element = buttonNav[i];
   botonNavegacion.push(buttonNav[i].innerText)
-  element.addEventListener("click", function (e) {
+  element.addEventListener("click", function (e) 
+  {
     imprimir(e.target.id);
 
 })}
@@ -48,7 +49,7 @@ function imprimir(id) {
       break;
 
     case "past":
-      let eventosPasados = eventos.filter(evento => evento.date < fechaBase)
+      let eventosPasados = eventos.filter(evento => evento.date <fechaBase)
       document.getElementById("tituloEncabezado").innerHTML = "Eventos Pasados";
       document.getElementById("navegacion-titulo").classList.add('nav_home');
       arrayFiltro = eventosPasados
@@ -76,15 +77,15 @@ function imprimir(id) {
             <form class="formu">
                 <div class="formulario_dos">
                   <label for="nombre"></label>
-                  <input type="text" name="nombre" placeholder="Nombre" required>
+                  <input type="text" id="nombre" placeholder="Nombre" required>
                 </div>
                 <div class="formulario_dos">
                   <label for="email"></label>
-                  <input type="email" name="email" placeholder="E-mail" required>
+                  <input type="email" id="email" placeholder="E-mail" required>
                 </div>
                 <div class="formulario_dos">
                   <label for="text"></label>
-                  <textarea type="message" name="message" placeholder="Mensaje"></textarea>
+                  <textarea name="message" id="text" placeholder="Mensaje"></textarea>
                 </div>
                 <div class="formulario_dos butSend">
                   <button type="submit" value="submit" id="enviar">Enviar</button>
@@ -177,7 +178,7 @@ function imprimir(id) {
 
 function display(array) {
   var html = "";
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0; i <array.length; i++) {
     html +=
       `<div class="item">
             <img src="${array[i].image}" class="card-img-top zoomable" alt="${array[i].name}">
@@ -220,7 +221,7 @@ switch (time[1]) {
 var buttonD = document.getElementById("flechaDerecha")
 buttonD.addEventListener("click", function (e) {
   var pagina = document.getElementById("tituloEncabezado").innerText
-  if (botonNavegacion.indexOf(pagina) < 4) {
+  if (botonNavegacion.indexOf(pagina) <4) {
     nextPage(botonNavegacion.indexOf(pagina) + 1);
   } else {
     nextPage(0)
@@ -252,7 +253,7 @@ function nextPage(i) {
 var buttonI = document.getElementById("flechaIzquierda")
 buttonI.addEventListener("click", function (e) {
   var paginaI = document.getElementById("tituloEncabezado").innerText
-  if (botonNavegacion.indexOf(paginaI) <= 4) {
+  if (botonNavegacion.indexOf(paginaI) <=4) {
     antPage(botonNavegacion.indexOf(paginaI) - 1);
   } else {
     antPage(0)
@@ -315,10 +316,10 @@ function eventsCategories(array) {
 
 function checkboxListener() {
   var checkboxs = document.querySelectorAll('input[type=checkbox]')
-  for (i = 0; i < checkboxs.length; i++) {
+  for (i = 0; i <checkboxs.length; i++) {
     checkboxs[i].addEventListener("change", function () {
       checkedCheckboxes = []
-      for (i = 0; i < checkboxs.length; i++) {
+      for (i = 0; i <checkboxs.length; i++) {
         if (checkboxs[i].checked) {
           checkedCheckboxes.push(checkboxs[i].value)
         }
@@ -390,7 +391,7 @@ async function initStats() {
       let totalCapacidadPasados = 0
       let totalCapacidadFuturos = 0
 
-      for (var i = 0; i < categoria.ingreso.length; i++) {
+      for (var i = 0; i <categoria.ingreso.length; i++) {
 
           if (categoria.ingreso[i] > 0) {
               totalCapacidadPasados += categoria.capacidad[i]

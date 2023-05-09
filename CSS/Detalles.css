@@ -76,14 +76,11 @@ section{
 }
 
 .card-imagen {
-    display: relative;
     overflow: hidden;
 }
 
 .zoomable {
     transition: transform .5s;
-
-    display: absolute;
 }
 
 .zoomable:hover {

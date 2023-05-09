@@ -142,7 +142,7 @@ footer {
     margin-bottom: 0;
 }
 
-.iconos a {
+.iconos{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
