@@ -1,5 +1,6 @@
 let fechaBase
-let eventos = []
+let eventos =[]
+console.log(eventos);
 let container = document.getElementById("container")
 let arrayFiltro = []
 let formulario = document.getElementById("form")
@@ -19,6 +20,7 @@ async function getData() {
   eventos = datosApi.eventos
   fechaBase = datosApi.fechaActual
   rutasPaginas()
+  display(eventos)
 }
 getData()
 
@@ -445,7 +447,7 @@ async function initStats() {
   var tdMayorCapacidad = document.createElement("td")
 
   rowMayoresYmenores.append(tdMayorAsistencia)
-  tdMayorAsistencia.append(eventoMayorAsistencia[0].name + " %" + eventoMayorAsistencia[0].porcentajeAsistencia.toFixed(2))
+  tdMayorAsistencia.append(`${eventoMayorAsistencia[0].name} %${eventoMayorAsistencia[0].porcentajeAsistencia.toFixed(2)}`)
 
   rowMayoresYmenores.append(tdMenorAsistencia)
   tdMenorAsistencia.append(eventoMenorAsistencia[0].name + " %" + eventoMenorAsistencia[0].porcentajeAsistencia.toFixed(2))
