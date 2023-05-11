@@ -195,10 +195,34 @@ footer {
     margin: 0px 20px;
 }
 
-@media screen and (min-width: 690px) and (max-width: 1024px) {
+@media screen and (min-width: 690px) and (max-width: 989px) {
     .nav-tabs {
         flex-direction: column;
         align-items: flex-end;
+    }
+
+    .navbar-toggler {
+        background: linear-gradient(to right bottom, #009dff8f, #ec2f4b94);
+        margin-top: 20px;
+        transition-property: translate, opacity, visibility;
+        transition-duration: 0.5s;
+    }
+    
+    .navbar-nav {
+        margin-top: 130px;
+        width: 180px;
+        height: 200px;
+        --bs-nav-link-padding-y: 0rem;
+        line-height: 30px;
+        background-color: rgba(212, 210, 208, 0.87);
+        z-index: 10;
+        margin-left: 80%;
+    }
+
+    
+    .collapsing {
+        right: 10px;
+        height: 0px;
     }
 
     .nav-item a {
@@ -236,7 +260,8 @@ footer {
     .navbar-toggler {
         background: linear-gradient(to right bottom, #009dff8f, #ec2f4b94);
         margin-top: 20px;
-
+        transition-property: translate, opacity, visibility;
+        transition-duration: 0.5s;
     }
 
     .navbar-nav {
@@ -350,26 +375,7 @@ footer {
 
 @media screen and (min-width: 690px) and (max-width: 980px) {
 
-    .navbar-toggler {
-        background: linear-gradient(to right bottom, #009dff8f, #ec2f4b94);
-        margin-top: 20px;
-    }
 
-    .navbar-nav {
-        margin-top: 130px;
-        width: 180px;
-        height: 200px;
-        --bs-nav-link-padding-y: 0rem;
-        line-height: 30px;
-        background-color: rgba(212, 210, 208, 0.87);
-        z-index: 10;
-        -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-	    animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-        margin-left: 80%;
-    }
 
-    .collapsing {
-        right: 10px;
-        height: 0px;
-    }
+
 }

@@ -1,6 +1,5 @@
 let fechaBase
 let eventos =[]
-console.log(eventos);
 let container = document.getElementById("container")
 let arrayFiltro = []
 let formulario = document.getElementById("form")
