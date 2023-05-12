@@ -6,6 +6,7 @@ let formulario = document.getElementById("form")
 let estadisticasDetalles = document.getElementById("statsDos")
 let tarjetasEventos = document.getElementById("tarjetas")
 var searchContainer = document.getElementById("search")
+var inputSearch = document.getElementById("inputSearch")
 let checkedCheckboxes = []
 let search = ""
 var botonNavegacion = []
@@ -44,6 +45,7 @@ function imprimir(id) {
       tarjetasEventos.style.display = "flex"
       formulario.style.display = "none"
       estadisticasDetalles.style.display = "none"
+      inputSearch.value = ""
       checkedCheckboxes = []
       display(eventosFuturos)
       eventsCategories(eventosFuturos)
@@ -58,6 +60,7 @@ function imprimir(id) {
       tarjetasEventos.style.display = "flex"
       formulario.style.display = "none"
       estadisticasDetalles.style.display = "none"
+      inputSearch.value = ""
       checkedCheckboxes = []
       display(eventosPasados)
       eventsCategories(eventosPasados)
@@ -173,6 +176,7 @@ function imprimir(id) {
       searchContainer.style.display = "flex"
       estadisticasDetalles.style.display = "none"
       formulario.style.display = "none"
+      inputSearch.value = ""
       display(eventos)
       eventsCategories(eventos)
 }}
@@ -293,7 +297,6 @@ function actionForm(event){
   console.log(formDatos);
 }
 
-var inputSearch = document.getElementById("Search")
 inputSearch.addEventListener("keyup", function (evento) {
   var datoInput = evento.target.value
   search = datoInput.trim().toLowerCase()

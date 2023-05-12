@@ -85,7 +85,6 @@ button[type="submit"] {
     margin-bottom: 10px;
     background: linear-gradient(to right bottom, #009dff8f, #ec2f4b94);
 }
-
 button[type="submit"] a {
     color: black;
     text-decoration-line: none;
