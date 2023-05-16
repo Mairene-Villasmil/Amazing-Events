@@ -76,7 +76,10 @@ function imprimir(id) {
       formulario.innerHTML =`
       <section class="formulario">
                 <div class="imagenForm">
-                  <img src="../Imagenes/formu.png" alt="">
+                <img src="./Imagenes/QR-AE.png" alt="QR-AmazingEvents">
+                </div>
+                <div class="imagenFormDos">
+                <img src="./Imagenes/formu.png" alt="imagenFormulario">
                 </div>
             <form class="formu">
                 <div class="formulario_dos">
